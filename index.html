@@ -1,201 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Macmillan Online — learn, play and explore with student-friendly lessons, quizzes and games.">
-<title>Macmillan Online | Learn • Play • Explore</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Macmillan Online V13 | 1,800 Revision Questions</title>
 <style>
-:root{--navy:#102a56;--blue:#1769d2;--sky:#eaf3ff;--gold:#ffca55;--ink:#17243a;--muted:#64748b;--white:#fff;--line:#dbe5f1;--green:#16845b}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f8fc;color:var(--ink);line-height:1.6}
-header{background:linear-gradient(120deg,#102a56,#1769d2);color:white;padding:18px 5%;position:sticky;top:0;z-index:10;box-shadow:0 4px 18px #102a5625}
-.top{max-width:1150px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:11px}
-.logo{width:46px;height:46px;border-radius:14px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-size:25px;font-weight:900}
-.brand h1{font-size:20px;line-height:1.1;margin:0;letter-spacing:.4px}
-.brand small{color:#dceaff;letter-spacing:1.4px;font-size:10px}
-nav{display:flex;gap:7px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none;padding:8px 11px;border-radius:8px;font-size:13px;font-weight:bold}
-nav a:hover,nav a:focus{background:#ffffff25}
-main{max-width:1150px;margin:auto;padding:24px 5% 60px}
-.hero{background:linear-gradient(120deg,#e6f1ff,#fff);border:1px solid #d7e7fa;border-radius:22px;padding:35px;display:grid;grid-template-columns:1.4fr .8fr;gap:20px;align-items:center}
-.hero h2{font-size:clamp(29px,5vw,45px);line-height:1.12;color:var(--navy);margin:0 0 12px}
-.hero p{color:#53657d;max-width:570px}
-.hero-art{font-size:100px;text-align:center}
-.eyebrow{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:1.7px;text-transform:uppercase}
-.btn{border:0;border-radius:9px;background:var(--blue);color:white;padding:11px 16px;font-weight:bold;cursor:pointer}
-.btn:hover{filter:brightness(.92)}
-.btn.secondary{background:white;color:var(--navy);border:1px solid var(--line)}
-.searchbar{display:flex;gap:8px;max-width:650px;margin:22px 0 5px}
-input,select{width:100%;padding:12px;border:1px solid #cbd7e6;border-radius:9px;font:inherit;background:white;color:var(--ink)}
-section{margin-top:34px;scroll-margin-top:100px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:15px}
-h2.section-title{font-size:25px;color:var(--navy);margin:0}
-.muted{color:var(--muted);font-size:14px}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
-.card{background:white;border:1px solid var(--line);border-radius:15px;padding:19px;box-shadow:0 5px 16px #102a5608}
-.card h3{margin:5px 0 8px;color:var(--navy)}
-.card p{margin:7px 0}
-.pill{display:inline-block;background:var(--sky);color:#1456a5;border-radius:20px;padding:4px 10px;font-size:11px;font-weight:bold}
-.subject{font-size:27px}
-.lesson{border-left:4px solid var(--blue);padding:9px 12px;background:#f6faff;border-radius:0 8px 8px 0;margin:10px 0}
-.quiz-option{display:block;width:100%;text-align:left;margin:7px 0;background:#f5f8fc;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px;cursor:pointer}
-.quiz-option:hover{border-color:var(--blue);background:var(--sky)}
-.feedback{font-weight:bold;margin-top:8px;min-height:25px}
-.game-area{background:#f6faff;border-radius:10px;padding:12px;margin-top:10px}
-.big-number{font-size:32px;font-weight:900;color:var(--blue)}
-.ad-slot{border:2px dashed #c5d3e5;border-radius:12px;padding:17px;text-align:center;color:var(--muted);background:#fbfdff}
-footer{background:var(--navy);color:white;padding:25px 5%;text-align:center}
-footer p{margin:5px}
-.hidden{display:none!important}
-.result{font-weight:bold;color:var(--green);min-height:24px}
-@media(max-width:760px){.hero{grid-template-columns:1fr;padding:24px}.hero-art{font-size:68px}.grid{grid-template-columns:1fr 1fr}header{position:static}}
-@media(max-width:500px){.grid{grid-template-columns:1fr}.searchbar{flex-direction:column}.brand h1{font-size:17px}nav a{padding:7px;font-size:12px}}
-</style>
-</head>
-<body>
-<header>
- <div class="top">
-  <div class="brand"><div class="logo">M</div><div><h1>MACMILLAN ONLINE</h1><small>LEARN • PLAY • EXPLORE</small></div></div>
-  <nav aria-label="Main navigation">
-   <a href="#home">Home</a><a href="#education">Education</a><a href="#quizzes">Quizzes</a><a href="#games">Games</a><a href="#technology">Technology</a><a href="#account">Account</a>
-  </nav>
- </div>
-</header>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f2f5f9;color:#203040;line-height:1.55}
+header{background:linear-gradient(120deg,#102a43,#1769aa);color:white;padding:25px 16px}
+.wrap{max-width:1050px;margin:auto}.logo{display:inline-grid;place-items:center;background:#f4b942;color:#102a43;border-radius:12px;width:44px;height:44px;font-size:24px;font-weight:bold;margin-right:10px;vertical-align:middle}
+h1{display:inline;font-size:clamp(24px,5vw,36px)}header p{margin:8px 0 0;color:#e5f1ff}
+main{max-width:1050px;margin:22px auto;padding:0 14px}.panel{background:white;border:1px solid #dce5ee;border-radius:14px;padding:20px;margin-bottom:16px;box-shadow:0 3px 12px #102a430a}
+h2{color:#102a43;margin-top:0}.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:9px}
+button,select{font-size:15px;border-radius:8px;padding:11px 13px;border:1px solid #cbd8e5;background:#fff;cursor:pointer}
+button.primary{background:#f4b942;border:0;font-weight:bold;color:#172b3d}
+button.subject-btn{background:#eaf4ff;border-color:#cfe3f7;color:#14558a;text-align:left}
+button.subject-btn.active{background:#1769aa;color:white}
+.muted{color:#607080;font-size:14px}.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.question{padding:12px 0;border-bottom:1px solid #e5ebf1}.question:last-child{border-bottom:0}.num{font-weight:bold;color:#1769aa;margin-right:6px}
+.answer{padding:10px 12px;margin:6px 0 12px;background:#eff8f0;border-left:4px solid #3b8b54;border-radius:6px}
+.hidden{display:none!important}.pill{display:inline-block;background:#eaf4ff;color:#14558a;border-radius:20px;padding:4px 9px;font-size:13px}
+footer{text-align:center;color:#667;padding:22px}
+@media(max-width:600px){.panel{padding:15px}.bar button{flex:1}}
+</style></head><body>
+<header><div class="wrap"><span class="logo">M</span><h1>Macmillan Online V13</h1>
+<p>1,800 subject revision questions • 200 questions per subject • Answers at the end of each subject bank</p></div></header>
 <main>
-<section id="home" class="hero">
- <div><div class="eyebrow">Your learning adventure starts here</div><h2>Learn something new. Every day.</h2>
- <p>Student-friendly notes, quick quizzes and fun games for curious learners. Start with a subject below and keep building your knowledge.</p>
- <a class="btn" href="#education" style="display:inline-block;text-decoration:none">Start learning</a>
- <div class="searchbar"><input id="siteSearch" type="search" placeholder="Search notes, subjects or games..." aria-label="Search website"><button class="btn" onclick="searchSite()">Search</button></div>
- <p class="muted" id="searchMessage" aria-live="polite"></p></div>
- <div class="hero-art" aria-hidden="true">📚💡🎓</div>
-</section>
-
-<section id="education">
- <div class="section-head"><div><div class="eyebrow">Study centre</div><h2 class="section-title">Education Centre</h2></div><span class="muted">Short revision notes</span></div>
- <div class="grid" id="lessonGrid">
-  <article class="card searchable"><span class="pill">MATHEMATICS</span><div class="subject">➗</div><h3>Algebra</h3><p>Algebra uses letters to represent unknown numbers.</p><div class="lesson"><b>Example:</b> x + 5 = 12<br>Subtract 5 from both sides: x = 7.</div><p><b>Remember:</b> Do the same operation to both sides of an equation.</p></article>
-  <article class="card searchable"><span class="pill">BIOLOGY</span><div class="subject">🌱</div><h3>Photosynthesis</h3><p>Green plants make glucose using light energy.</p><div class="lesson"><b>Requirements:</b> light, water, carbon dioxide and chlorophyll.</div><p><b>Products:</b> glucose and oxygen.</p></article>
-  <article class="card searchable"><span class="pill">CHEMISTRY</span><div class="subject">🧪</div><h3>Acids and bases</h3><p>Acids have pH below 7, neutral solutions have pH 7, and alkaline solutions have pH above 7.</p><div class="lesson"><b>Indicator:</b> Blue litmus turns red in an acid.</div></article>
-  <article class="card searchable"><span class="pill">PHYSICS</span><div class="subject">⚡</div><h3>Electricity: Ohm's law</h3><p>At constant temperature, current is proportional to voltage.</p><div class="lesson"><b>Formula:</b> V = I × R<br>Voltage = current × resistance.</div></article>
-  <article class="card searchable"><span class="pill">COMPUTER SCIENCE</span><div class="subject">💻</div><h3>Computer hardware</h3><p>Hardware means the physical parts of a computer.</p><div class="lesson"><b>Examples:</b> keyboard, monitor, mouse, processor and printer.</div></article>
-  <article class="card searchable"><span class="pill">GEOGRAPHY</span><div class="subject">🌍</div><h3>Weather and climate</h3><p>Weather describes short-term atmospheric conditions. Climate is the average weather pattern of a place over a long period.</p></article>
-  <article class="card searchable"><span class="pill">ENGLISH</span><div class="subject">📖</div><h3>Parts of speech</h3><p>Nouns name people, places or things. Verbs show actions or states. Adjectives describe nouns.</p></article>
-  <article class="card searchable"><span class="pill">HISTORY</span><div class="subject">🏛️</div><h3>Using historical sources</h3><p>Historians study written, oral, archaeological and visual sources to learn about the past.</p></article>
-  <article class="card searchable"><span class="pill">AGRICULTURE</span><div class="subject">🌾</div><h3>Soil conservation</h3><p>Soil can be protected through contour ploughing, mulching, crop rotation and planting cover crops.</p></article>
- </div>
-</section>
-
-<section id="quizzes">
- <div class="section-head"><div><div class="eyebrow">Check what you know</div><h2 class="section-title">Quick Quizzes</h2></div><span class="muted">Choose an answer to get feedback</span></div>
- <div class="grid">
-  <article class="card searchable"><span class="pill">BIOLOGY</span><h3>Which organ pumps blood around the body?</h3><div id="bioOptions"></div><div class="feedback" id="bioFeedback" aria-live="polite"></div></article>
-  <article class="card searchable"><span class="pill">MATHEMATICS</span><h3>What is 8 × 7?</h3><div id="mathOptions"></div><div class="feedback" id="mathFeedback" aria-live="polite"></div></article>
-  <article class="card searchable"><span class="pill">CHEMISTRY</span><h3>What is the pH of a neutral solution at room temperature?</h3><div id="chemOptions"></div><div class="feedback" id="chemFeedback" aria-live="polite"></div></article>
- </div>
- <p class="muted">Quiz scores are shown on this device only.</p>
-</section>
-
-<section id="games">
- <div class="section-head"><div><div class="eyebrow">Take a short break</div><h2 class="section-title">Gaming Centre</h2></div></div>
- <div class="grid">
-  <article class="card searchable"><span class="pill">GAME 1</span><h3>Click the Star</h3><p>Tap the star and try to beat your score.</p><div class="game-area"><div>Score: <span class="big-number" id="starScore">0</span></div><button class="btn" onclick="addStar()">⭐ Click me!</button> <button class="btn secondary" onclick="resetStar()">Reset</button></div></article>
-  <article class="card searchable"><span class="pill">GAME 2</span><h3>Number Guessing</h3><p>Guess a number from 1 to 10.</p><div class="game-area"><input id="guessInput" type="number" min="1" max="10" placeholder="Enter 1 to 10"><button class="btn" onclick="guessNumber()">Guess</button><p id="guessFeedback" class="result" aria-live="polite"></p><button class="btn secondary" onclick="newNumber()">New number</button></div></article>
-  <article class="card searchable"><span class="pill">GAME 3</span><h3>Rock, Paper, Scissors</h3><p>Choose your move.</p><div class="game-area"><button class="btn" onclick="playRPS('Rock')">🪨 Rock</button> <button class="btn" onclick="playRPS('Paper')">📄 Paper</button> <button class="btn" onclick="playRPS('Scissors')">✂️ Scissors</button><p id="rpsResult" class="result" aria-live="polite"></p></div></article>
- </div>
-</section>
-
-<section id="technology">
- <div class="section-head"><div><div class="eyebrow">Digital skills</div><h2 class="section-title">Technology Centre</h2></div></div>
- <div class="grid">
-  <article class="card searchable"><h3>HTML</h3><p>HTML gives a webpage its structure, such as headings, paragraphs, images and links.</p></article>
-  <article class="card searchable"><h3>CSS</h3><p>CSS controls how a webpage looks, including colours, spacing, fonts and layout.</p></article>
-  <article class="card searchable"><h3>JavaScript</h3><p>JavaScript adds behaviour, such as interactive buttons, quizzes and games.</p></article>
- </div>
-</section>
-
-<section id="account">
- <div class="section-head"><div><div class="eyebrow">On this device</div><h2 class="section-title">My Learning Profile</h2></div></div>
- <div class="card">
-  <p>This simple profile stores a display name in this browser only. It is not a real online account and does not use a password.</p>
-  <label for="displayName"><b>Display name</b></label>
-  <div class="searchbar"><input id="displayName" maxlength="24" placeholder="Choose a display name"><button class="btn" onclick="saveProfile()">Save profile</button></div>
-  <p id="profileMessage" class="result" aria-live="polite"></p>
-  <button class="btn secondary" onclick="clearProfile()">Clear profile</button>
- </div>
-</section>
-
-<section id="advertising">
- <div class="section-head"><div><div class="eyebrow">Future partner space</div><h2 class="section-title">Advertising</h2></div></div>
- <div class="ad-slot">Advertisement space — reserved for a properly approved advertising partner.<br><small>Ad code has not been connected.</small></div>
-</section>
-</main>
-<footer><p><b>🌍 MACMILLAN ONLINE</b></p><p>Learn • Play • Explore</p><p>© 2026 Macmillan Online. Educational content for learning and revision.</p></footer>
-
+<section class="panel"><h2>Choose a subject</h2><p class="muted">Select a subject to open its 200 questions. Complete the question section first, then scroll to the answer key at the end.</p><div id="subjects" class="subject-grid"></div></section>
+<section class="panel" id="bank"><h2 id="bankTitle">Your revision bank</h2><div class="bar"><span class="pill" id="count">Choose a subject</span><button class="primary" id="toggleAnswers" onclick="toggleAnswers()" disabled>Show answer key</button><button onclick="window.print()">Print this subject</button></div><div id="questions"></div><div id="answers" class="hidden"><hr><h2>Answer key — answers are at the end</h2><p class="muted">Use these answers to mark your work. Some written answers may be expressed in other correct ways.</p><div id="answerList"></div></div></section>
+<section class="panel"><h2>How to use the question bank</h2><ol><li>Choose one subject.</li><li>Answer the 200 questions in a notebook before opening the answer key.</li><li>Mark your work and revise the topics you missed.</li><li>Ask your teacher to explain any answer that differs from your class notes.</li></ol><p class="muted">These are practice questions, not official examination papers. Check your current school syllabus and teacher's guidance.</p></section>
+</main><footer>Macmillan Online • Learn • Practise • Improve</footer>
 <script>
-let starScore=0;
-function addStar(){starScore++;document.getElementById('starScore').textContent=starScore}
-function resetStar(){starScore=0;document.getElementById('starScore').textContent=starScore}
-let secretNumber=Math.floor(Math.random()*10)+1;
-function guessNumber(){
- const field=document.getElementById('guessInput');const n=Number(field.value);const out=document.getElementById('guessFeedback');
- if(!Number.isInteger(n)||n<1||n>10){out.textContent='Enter a whole number from 1 to 10.';return}
- if(n===secretNumber){out.textContent='Correct! You found the number. Press New number to play again.'}
- else if(n<secretNumber){out.textContent='Too low. Try again!'}
- else{out.textContent='Too high. Try again!'}
-}
-function newNumber(){secretNumber=Math.floor(Math.random()*10)+1;document.getElementById('guessInput').value='';document.getElementById('guessFeedback').textContent='A new number is ready!'}
-function playRPS(user){
- const choices=['Rock','Paper','Scissors'];const computer=choices[Math.floor(Math.random()*3)];let result;
- if(user===computer)result='It is a draw.';
- else if((user==='Rock'&&computer==='Scissors')||(user==='Paper'&&computer==='Rock')||(user==='Scissors'&&computer==='Paper'))result='You win!';
- else result='Computer wins this round.';
- document.getElementById('rpsResult').textContent='You: '+user+' | Computer: '+computer+'. '+result;
-}
-const quizData=[
- {id:'bio',correct:'Heart',options:['Brain','Heart','Lungs']},
- {id:'math',correct:'56',options:['54','56','64']},
- {id:'chem',correct:'7',options:['2','7','12']}
-];
-quizData.forEach(q=>{
- const box=document.getElementById(q.id+'Options');
- q.options.forEach(option=>{
-  const button=document.createElement('button');button.className='quiz-option';button.textContent=option;
-  button.addEventListener('click',()=>{
-   const feedback=document.getElementById(q.id+'Feedback');
-   feedback.textContent=option===q.correct?'Correct! Well done.':'Not quite. Try again.';
-   feedback.style.color=option===q.correct?'#16845b':'#b45309';
-  });
-  box.appendChild(button);
- });
-});
-function searchSite(){
- const term=document.getElementById('siteSearch').value.trim().toLowerCase();
- const cards=[...document.querySelectorAll('.searchable')];let count=0;
- cards.forEach(card=>{const match=!term||card.innerText.toLowerCase().includes(term);card.classList.toggle('hidden',!match);if(match)count++});
- document.getElementById('searchMessage').textContent=term?(count+' matching section(s) found. Scroll down to view them.'):'Showing all learning content.';
- if(term)document.getElementById('education').scrollIntoView({behavior:'smooth'});
-}
-document.getElementById('siteSearch').addEventListener('keydown',e=>{if(e.key==='Enter')searchSite()});
-function saveProfile(){
- const name=document.getElementById('displayName').value.trim();
- const msg=document.getElementById('profileMessage');
- if(!name){msg.textContent='Please enter a display name.';return}
- try{localStorage.setItem('macmillanDisplayName',name);msg.textContent='Welcome, '+name+'! Your profile is saved on this device.'}
- catch(e){msg.textContent='This browser could not save the profile.'}
-}
-function clearProfile(){
- try{localStorage.removeItem('macmillanDisplayName')}catch(e){}
- document.getElementById('displayName').value='';
- document.getElementById('profileMessage').textContent='Local profile cleared.';
-}
-try{
- const saved=localStorage.getItem('macmillanDisplayName');
- if(saved){document.getElementById('displayName').value=saved;document.getElementById('profileMessage').textContent='Welcome back, '+saved+'!'}
-}catch(e){}
-</script>
-</body>
-</html>
+const banks = {"Mathematics": [{"q": "Answer this revision question: What is 25% of 200?", "a": "50"}, {"q": "Test yourself: What is 25% of 200?", "a": "50"}, {"q": "Write a short answer to this: What is 25% of 200?", "a": "50"}, {"q": "Check your understanding: What is 25% of 200?", "a": "50"}, {"q": "In your own words, answer: What is 25% of 200?", "a": "50"}, {"q": "Recall the correct answer: What is 25% of 200?", "a": "50"}, {"q": "Revision task: What is 25% of 200?", "a": "50"}, {"q": "What would you write for this question? What is 25% of 200?", "a": "50"}, {"q": "Practise this key point: What is 25% of 200?", "a": "50"}, {"q": "Exam practice: What is 25% of 200?", "a": "50"}, {"q": "Answer this revision question: Simplify 18:24.", "a": "3:4"}, {"q": "Test yourself: Simplify 18:24.", "a": "3:4"}, {"q": "Write a short answer to this: Simplify 18:24.", "a": "3:4"}, {"q": "Check your understanding: Simplify 18:24.", "a": "3:4"}, {"q": "In your own words, answer: Simplify 18:24.", "a": "3:4"}, {"q": "Recall the correct answer: Simplify 18:24.", "a": "3:4"}, {"q": "Revision task: Simplify 18:24.", "a": "3:4"}, {"q": "What would you write for this question? Simplify 18:24.", "a": "3:4"}, {"q": "Practise this key point: Simplify 18:24.", "a": "3:4"}, {"q": "Exam practice: Simplify 18:24.", "a": "3:4"}, {"q": "Answer this revision question: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "Test yourself: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "Write a short answer to this: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "Check your understanding: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "In your own words, answer: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "Recall the correct answer: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "Revision task: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "What would you write for this question? Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "Practise this key point: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "Exam practice: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "Answer this revision question: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "Test yourself: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "Write a short answer to this: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "Check your understanding: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "In your own words, answer: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "Recall the correct answer: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "Revision task: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "What would you write for this question? Expand 4(x + 3).", "a": "4x + 12"}, {"q": "Practise this key point: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "Exam practice: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "Answer this revision question: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "Test yourself: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "Write a short answer to this: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "Check your understanding: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "In your own words, answer: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "Recall the correct answer: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "Revision task: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "What would you write for this question? Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "Practise this key point: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "Exam practice: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "Answer this revision question: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "Test yourself: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "Write a short answer to this: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "Check your understanding: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "In your own words, answer: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "Recall the correct answer: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "Revision task: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "What would you write for this question? Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "Practise this key point: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "Exam practice: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "Answer this revision question: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "Test yourself: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "Write a short answer to this: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "Check your understanding: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "In your own words, answer: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "Recall the correct answer: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "Revision task: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "What would you write for this question? Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "Practise this key point: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "Exam practice: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "Answer this revision question: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "Test yourself: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "Write a short answer to this: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "Check your understanding: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "In your own words, answer: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "Recall the correct answer: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "Revision task: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "What would you write for this question? Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "Practise this key point: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "Exam practice: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "Answer this revision question: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "Test yourself: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "Write a short answer to this: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "Check your understanding: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "In your own words, answer: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "Recall the correct answer: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "Revision task: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "What would you write for this question? What is the sum of angles in a triangle?", "a": "180°"}, {"q": "Practise this key point: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "Exam practice: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "Answer this revision question: What is the sum of angles around a point?", "a": "360°"}, {"q": "Test yourself: What is the sum of angles around a point?", "a": "360°"}, {"q": "Write a short answer to this: What is the sum of angles around a point?", "a": "360°"}, {"q": "Check your understanding: What is the sum of angles around a point?", "a": "360°"}, {"q": "In your own words, answer: What is the sum of angles around a point?", "a": "360°"}, {"q": "Recall the correct answer: What is the sum of angles around a point?", "a": "360°"}, {"q": "Revision task: What is the sum of angles around a point?", "a": "360°"}, {"q": "What would you write for this question? What is the sum of angles around a point?", "a": "360°"}, {"q": "Practise this key point: What is the sum of angles around a point?", "a": "360°"}, {"q": "Exam practice: What is the sum of angles around a point?", "a": "360°"}, {"q": "Answer this revision question: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "Test yourself: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "Write a short answer to this: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "Check your understanding: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "In your own words, answer: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "Recall the correct answer: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "Revision task: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "What would you write for this question? Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "Practise this key point: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "Exam practice: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "Answer this revision question: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "Test yourself: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "Write a short answer to this: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "Check your understanding: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "In your own words, answer: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "Recall the correct answer: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "Revision task: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "What would you write for this question? Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "Practise this key point: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "Exam practice: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "Answer this revision question: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "Test yourself: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "Write a short answer to this: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "Check your understanding: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "In your own words, answer: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "Recall the correct answer: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "Revision task: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "What would you write for this question? Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "Practise this key point: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "Exam practice: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "Answer this revision question: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "Test yourself: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "Write a short answer to this: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "Check your understanding: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "In your own words, answer: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "Recall the correct answer: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "Revision task: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "What would you write for this question? Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "Practise this key point: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "Exam practice: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "Answer this revision question: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "Test yourself: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "Write a short answer to this: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "Check your understanding: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "In your own words, answer: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "Recall the correct answer: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "Revision task: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "What would you write for this question? State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "Practise this key point: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "Exam practice: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "Answer this revision question: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "Test yourself: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "Write a short answer to this: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "Check your understanding: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "In your own words, answer: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "Recall the correct answer: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "Revision task: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "What would you write for this question? Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "Practise this key point: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "Exam practice: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "Answer this revision question: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "Test yourself: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "Write a short answer to this: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "Check your understanding: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "In your own words, answer: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "Recall the correct answer: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "Revision task: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "What would you write for this question? Convert 3/5 to a percentage.", "a": "60%"}, {"q": "Practise this key point: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "Exam practice: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "Answer this revision question: Evaluate 2³ × 2².", "a": "32"}, {"q": "Test yourself: Evaluate 2³ × 2².", "a": "32"}, {"q": "Write a short answer to this: Evaluate 2³ × 2².", "a": "32"}, {"q": "Check your understanding: Evaluate 2³ × 2².", "a": "32"}, {"q": "In your own words, answer: Evaluate 2³ × 2².", "a": "32"}, {"q": "Recall the correct answer: Evaluate 2³ × 2².", "a": "32"}, {"q": "Revision task: Evaluate 2³ × 2².", "a": "32"}, {"q": "What would you write for this question? Evaluate 2³ × 2².", "a": "32"}, {"q": "Practise this key point: Evaluate 2³ × 2².", "a": "32"}, {"q": "Exam practice: Evaluate 2³ × 2².", "a": "32"}, {"q": "Answer this revision question: Solve 5y = 45.", "a": "y = 9"}, {"q": "Test yourself: Solve 5y = 45.", "a": "y = 9"}, {"q": "Write a short answer to this: Solve 5y = 45.", "a": "y = 9"}, {"q": "Check your understanding: Solve 5y = 45.", "a": "y = 9"}, {"q": "In your own words, answer: Solve 5y = 45.", "a": "y = 9"}, {"q": "Recall the correct answer: Solve 5y = 45.", "a": "y = 9"}, {"q": "Revision task: Solve 5y = 45.", "a": "y = 9"}, {"q": "What would you write for this question? Solve 5y = 45.", "a": "y = 9"}, {"q": "Practise this key point: Solve 5y = 45.", "a": "y = 9"}, {"q": "Exam practice: Solve 5y = 45.", "a": "y = 9"}, {"q": "Answer this revision question: What is the probability of getting a head on a fair coin?", "a": "1/2"}, {"q": "Test yourself: What is the probability of getting a head on a fair coin?", "a": "1/2"}, {"q": "Write a short answer to this: What is the probability of getting a head on a fair coin?", "a": "1/2"}, {"q": "Check your understanding: What is the probability of getting a head on a fair coin?", "a": "1/2"}, {"q": "In your own words, answer: What is the probability of getting a head on a fair coin?", "a": "1/2"}, {"q": "Recall the correct answer: What is the probability of getting a hea
