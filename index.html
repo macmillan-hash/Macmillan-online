@@ -1,30 +1,270 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Macmillan Online V13 | 1,800 Revision Questions</title>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102a56">
+<title>Macmillan Online V11 | Expanded Study Library</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f2f5f9;color:#203040;line-height:1.55}
-header{background:linear-gradient(120deg,#102a43,#1769aa);color:white;padding:25px 16px}
-.wrap{max-width:1050px;margin:auto}.logo{display:inline-grid;place-items:center;background:#f4b942;color:#102a43;border-radius:12px;width:44px;height:44px;font-size:24px;font-weight:bold;margin-right:10px;vertical-align:middle}
-h1{display:inline;font-size:clamp(24px,5vw,36px)}header p{margin:8px 0 0;color:#e5f1ff}
-main{max-width:1050px;margin:22px auto;padding:0 14px}.panel{background:white;border:1px solid #dce5ee;border-radius:14px;padding:20px;margin-bottom:16px;box-shadow:0 3px 12px #102a430a}
-h2{color:#102a43;margin-top:0}.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:9px}
-button,select{font-size:15px;border-radius:8px;padding:11px 13px;border:1px solid #cbd8e5;background:#fff;cursor:pointer}
-button.primary{background:#f4b942;border:0;font-weight:bold;color:#172b3d}
-button.subject-btn{background:#eaf4ff;border-color:#cfe3f7;color:#14558a;text-align:left}
-button.subject-btn.active{background:#1769aa;color:white}
-.muted{color:#607080;font-size:14px}.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.question{padding:12px 0;border-bottom:1px solid #e5ebf1}.question:last-child{border-bottom:0}.num{font-weight:bold;color:#1769aa;margin-right:6px}
-.answer{padding:10px 12px;margin:6px 0 12px;background:#eff8f0;border-left:4px solid #3b8b54;border-radius:6px}
-.hidden{display:none!important}.pill{display:inline-block;background:#eaf4ff;color:#14558a;border-radius:20px;padding:4px 9px;font-size:13px}
-footer{text-align:center;color:#667;padding:22px}
-@media(max-width:600px){.panel{padding:15px}.bar button{flex:1}}
-</style></head><body>
-<header><div class="wrap"><span class="logo">M</span><h1>Macmillan Online V13</h1>
-<p>1,800 subject revision questions • 200 questions per subject • Answers at the end of each subject bank</p></div></header>
-<main>
-<section class="panel"><h2>Choose a subject</h2><p class="muted">Select a subject to open its 200 questions. Complete the question section first, then scroll to the answer key at the end.</p><div id="subjects" class="subject-grid"></div></section>
-<section class="panel" id="bank"><h2 id="bankTitle">Your revision bank</h2><div class="bar"><span class="pill" id="count">Choose a subject</span><button class="primary" id="toggleAnswers" onclick="toggleAnswers()" disabled>Show answer key</button><button onclick="window.print()">Print this subject</button></div><div id="questions"></div><div id="answers" class="hidden"><hr><h2>Answer key — answers are at the end</h2><p class="muted">Use these answers to mark your work. Some written answers may be expressed in other correct ways.</p><div id="answerList"></div></div></section>
-<section class="panel"><h2>How to use the question bank</h2><ol><li>Choose one subject.</li><li>Answer the 200 questions in a notebook before opening the answer key.</li><li>Mark your work and revise the topics you missed.</li><li>Ask your teacher to explain any answer that differs from your class notes.</li></ol><p class="muted">These are practice questions, not official examination papers. Check your current school syllabus and teacher's guidance.</p></section>
-</main><footer>Macmillan Online • Learn • Practise • Improve</footer>
+:root{--navy:#102a56;--blue:#1769d2;--pale:#eaf2ff;--ink:#17243a;--muted:#64748b;--line:#d9e3ef;--bg:#f3f6fb;--gold:#ffca55}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:15px Arial,sans-serif;color:var(--ink);line-height:1.65}
+header{background:var(--navy);color:white;padding:14px 4%}.head{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px}.logo{width:43px;height:43px;background:var(--gold);color:var(--navy);border-radius:12px;display:grid;place-items:center;font-size:24px;font-weight:900}.brand b{display:block}.brand small{font-size:10px;letter-spacing:1.4px;color:#d4e4fa}
+nav{display:flex;gap:6px;flex-wrap:wrap}nav a{color:white;text-decoration:none;padding:7px 10px;border-radius:7px;font-size:13px}nav a:hover{background:#ffffff22}
+main{max-width:1200px;margin:auto;padding:22px 4% 55px}.hero{background:linear-gradient(120deg,#e4efff,#fff);border:1px solid #d4e3f5;border-radius:18px;padding:26px;margin-bottom:22px}.eyebrow{color:var(--blue);font-size:11px;font-weight:bold;letter-spacing:1.6px;text-transform:uppercase}.hero h1{font-size:clamp(27px,5vw,42px);line-height:1.2;color:var(--navy);margin:5px 0}.hero p{color:#52647d;max-width:760px;margin:8px 0}
+.searchrow{display:flex;gap:8px;max-width:700px;margin-top:15px}.searchrow input{flex:1;min-width:80px;padding:11px;border:1px solid var(--line);border-radius:9px;font:inherit}
+button,.btn{cursor:pointer;border:0;border-radius:9px;background:var(--blue);color:white;padding:10px 14px;font-weight:bold}.btn2{background:white;color:var(--navy);border:1px solid var(--line)}
+.layout{display:grid;grid-template-columns:245px minmax(0,1fr);gap:18px;align-items:start}
+aside{background:white;border:1px solid var(--line);border-radius:14px;padding:14px;position:sticky;top:12px}
+aside h3{margin:3px 0 10px;color:var(--navy)}.subject-link{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--ink);font-size:14px}.subject-link:hover,.subject-link.active{background:var(--pale);color:#1456a5;font-weight:bold}
+.content{min-width:0}.subject-panel{background:white;border:1px solid var(--line);border-radius:15px;padding:20px;margin-bottom:16px;scroll-margin-top:12px}
+.subject-panel h2{color:var(--navy);margin:0 0 4px;font-size:25px}.subject-panel h3{color:#174b8d;margin:19px 0 6px;font-size:18px}.subject-panel h4{margin:12px 0 4px;color:#263e5f}
+.subject-panel p{margin:6px 0}.subject-panel ul,.subject-panel ol{padding-left:22px;margin:6px 0}.subject-panel li{margin:4px 0}
+.topic{background:#f5f8fd;border-left:4px solid var(--blue);padding:11px 13px;border-radius:0 9px 9px 0;margin:10px 0}
+.formula{background:#edf5ff;padding:11px;border-radius:9px;font-weight:bold;color:#164d91;margin:8px 0}
+.exam{background:#fff8e8;border:1px solid #f0dfa9;padding:12px;border-radius:10px;margin-top:12px}.exam b{color:#78550a}
+.tag{display:inline-block;background:var(--pale);color:#1456a5;padding:3px 9px;border-radius:20px;font-size:10px;font-weight:bold}
+.hidden{display:none!important}.empty{padding:18px;background:white;border:1px solid var(--line);border-radius:12px;color:var(--muted)}
+footer{background:var(--navy);color:white;text-align:center;padding:23px;font-size:13px}
+@media(max-width:780px){.layout{grid-template-columns:1fr}aside{position:static}.subject-menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px}.subject-panel{padding:15px}}
+@media(max-width:480px){main{padding:14px 3% 40px}.searchrow{flex-direction:column}.subject-menu{grid-template-columns:1fr 1fr}nav a{font-size:12px;padding:6px}}
+</style>
+</head>
+<body>
+<header><div class="head">
+ <div class="brand"><div class="logo">M</div><div><b>MACMILLAN ONLINE</b><small>LEARN • SEARCH • EXPLORE</small></div></div>
+ <nav><a href="#top">Home</a><a href="#library">Study Library</a><a href="#revision">Revision</a></nav>
+</div></header>
+<main id="top">
+<section class="hero">
+ <div class="eyebrow">Version 11 • Expanded study library</div>
+ <h1>Learn more. Understand better.</h1>
+ <p>Explore expanded subject notes, worked examples, key terms and revision questions. These are starter learning notes; check your teacher's syllabus and class materials for the exact topics and depth required.</p>
+ <div class="searchrow"><input id="noteSearch" type="search" placeholder="Search all notes, e.g. photosynthesis, algebra..." oninput="filterNotes()"><button onclick="clearSearch()" class="btn2">Clear search</button></div>
+ <p id="searchStatus" style="font-size:12px;color:#64748b" aria-live="polite">Showing all subjects.</p>
+</section>
+<div class="layout" id="library">
+<aside><h3>📚 Subjects</h3><div class="subject-menu">
+<a class="subject-link active" href="#maths">Mathematics</a><a class="subject-link" href="#biology">Biology</a><a class="subject-link" href="#chemistry">Chemistry</a><a class="subject-link" href="#physics">Physics</a><a class="subject-link" href="#computers">Computer Science</a><a class="subject-link" href="#geography">Geography</a><a class="subject-link" href="#history">History</a><a class="subject-link" href="#english">English</a><a class="subject-link" href="#agriculture">Agriculture</a>
+</div></aside>
+<div class="content" id="notes">
+
+<section class="subject-panel searchable" id="maths">
+<span class="tag">SUBJECT 01</span><h2>➗ Mathematics</h2><p>Mathematics involves numbers, patterns, shapes, measurements and logical problem-solving.</p>
+<h3>1. Number operations</h3>
+<p>The four basic operations are addition, subtraction, multiplication and division. Follow the order of operations: brackets, powers, division and multiplication, then addition and subtraction (working from left to right where operations have equal priority).</p>
+<div class="topic"><b>Example:</b> \(6 + 4 \times 3 = 6 + 12 = 18\). Multiplication is done before addition.</div>
+<h3>2. Fractions, decimals and percentages</h3>
+<ul><li>A fraction represents part of a whole. In \(3/5\), 3 is the numerator and 5 is the denominator.</li><li>To add fractions, first express them with a common denominator.</li><li>To convert a decimal to a percentage, multiply by 100.</li><li>To find a percentage of an amount, multiply the amount by the percentage divided by 100.</li></ul>
+<div class="topic"><b>Example:</b> 20% of 150 = \(20/100 \times 150 = 30\).</div>
+<h3>3. Algebra</h3>
+<p>Algebra uses letters to represent unknown or changing values. A term is a number, a variable, or their product. Like terms have the same variable part.</p>
+<div class="topic"><b>Simplify:</b> \(3x + 5x - 2 = 8x - 2\).</div>
+<div class="topic"><b>Solve:</b> \(2x + 7 = 19\). Subtract 7: \(2x=12\). Divide by 2: \(x=6\).</div>
+<h3>4. Ratio and proportion</h3>
+<p>A ratio compares quantities. Simplify a ratio by dividing all parts by their highest common factor. A proportion states that two ratios are equal.</p>
+<div class="topic"><b>Example:</b> 12:18 simplifies to 2:3 after dividing both numbers by 6.</div>
+<h3>5. Geometry and mensuration</h3>
+<ul><li>Angles on a straight line add to 180°.</li><li>Angles around a point add to 360°.</li><li>Angles in a triangle add to 180°.</li><li>Opposite angles in a cyclic quadrilateral add to 180°.</li><li>Perimeter is the total distance around a 2D shape; area is the space inside it.</li></ul>
+<div class="formula">Rectangle area = length × width<br>Triangle area = ½ × base × perpendicular height<br>Circle circumference = 2πr<br>Circle area = πr²</div>
+<h3>6. Statistics and probability</h3>
+<p>Mean = sum of values ÷ number of values. Median is the middle value after arranging data in order. Mode is the most frequent value. Range = highest value − lowest value.</p>
+<p>For equally likely outcomes, probability = number of favourable outcomes ÷ total number of possible outcomes.</p>
+<div class="exam"><b>Revision questions</b><ol><li>Simplify 15:25.</li><li>Solve 3x − 4 = 11.</li><li>Find 15% of 240.</li><li>Find the area of a triangle with base 10 cm and height 6 cm.</li><li>Find the mean of 4, 6, 8 and 10.</li></ol></div>
+</section>
+
+<section class="subject-panel searchable" id="biology">
+<span class="tag">SUBJECT 02</span><h2>🌱 Biology</h2><p>Biology is the study of living organisms and how they interact with their environment.</p>
+<h3>1. Characteristics of living things</h3>
+<p>Living organisms carry out life processes commonly remembered as MRS GREN:</p>
+<ul><li><b>Movement:</b> change in position of the whole organism or a part.</li><li><b>Respiration:</b> chemical reactions in cells that release energy from food.</li><li><b>Sensitivity:</b> detecting and responding to changes in the environment.</li><li><b>Growth:</b> permanent increase in size and dry mass.</li><li><b>Reproduction:</b> production of offspring.</li><li><b>Excretion:</b> removal of metabolic waste products.</li><li><b>Nutrition:</b> obtaining or making food.</li></ul>
+<h3>2. Cell structure</h3>
+<p>The cell is the basic structural and functional unit of life. The cell membrane controls movement of substances into and out of the cell. Cytoplasm is where many chemical reactions occur. The nucleus contains genetic material and controls cell activities.</p>
+<p>Plant cells also have a cellulose cell wall, a large permanent vacuole and, in photosynthetic cells, chloroplasts containing chlorophyll. Animal cells do not have a cell wall or chloroplasts.</p>
+<h3>3. Nutrition and digestion</h3>
+<p>A balanced diet contains carbohydrates, proteins, fats, vitamins, minerals, fibre and water in suitable amounts. Carbohydrates provide energy; proteins are needed for growth and repair; fats store energy and provide insulation.</p>
+<div class="topic"><b>Digestion:</b> large, insoluble food molecules are broken down into small, soluble molecules that can be absorbed.</div>
+<ul><li>Amylase breaks starch into smaller sugars, eventually maltose.</li><li>Proteases break proteins into peptides and amino acids.</li><li>Lipase breaks fats into fatty acids and glycerol.</li><li>Bile is made by the liver and stored in the gall bladder. It neutralises acidic chyme and emulsifies fats; it is not an enzyme.</li></ul>
+<h3>4. Transport in humans</h3>
+<p>The heart pumps blood through blood vessels. Arteries carry blood away from the heart, veins carry blood towards the heart, and capillaries allow exchange of substances with tissues. Red blood cells contain haemoglobin, which transports oxygen.</p>
+<h3>5. Photosynthesis</h3>
+<div class="formula">Carbon dioxide + water → glucose + oxygen<br><small>Requires light energy absorbed by chlorophyll.</small></div>
+<p>Photosynthesis occurs in chloroplasts. Plants use glucose in respiration, convert it to starch for storage, or use it to make cellulose and other substances.</p>
+<h3>6. Respiration</h3>
+<p>Aerobic respiration releases energy from glucose using oxygen. It mainly takes place in mitochondria.</p>
+<div class="formula">Glucose + oxygen → carbon dioxide + water + energy</div>
+<p>Anaerobic respiration releases less energy without oxygen. In human muscles, glucose is converted to lactic acid during vigorous activity.</p>
+<h3>7. Ecology</h3>
+<p>An ecosystem includes organisms and their physical environment. A habitat is the place where an organism lives. A population is members of one species in an area; a community is all the populations in an area.</p>
+<p>A food chain shows feeding relationships and the direction of energy transfer. Producers make their own food; consumers feed on other organisms; decomposers break down dead material and waste.</p>
+<div class="exam"><b>Revision questions</b><ol><li>State seven characteristics of living things.</li><li>Name three structures found in plant cells but not animal cells.</li><li>Which enzyme digests fats?</li><li>Write the word equation for photosynthesis.</li><li>Explain one difference between arteries and veins.</li></ol></div>
+</section>
+
+<section class="subject-panel searchable" id="chemistry">
+<span class="tag">SUBJECT 03</span><h2>🧪 Chemistry</h2><p>Chemistry studies substances, their properties, composition and the changes they undergo.</p>
+<h3>1. Particles and states of matter</h3>
+<p>In a solid, particles are close together and vibrate about fixed positions. In a liquid, particles remain close but can move past one another. In a gas, particles are far apart and move rapidly in random directions.</p>
+<p>Melting is solid to liquid; freezing is liquid to solid; evaporation or boiling is liquid to gas; condensation is gas to liquid; sublimation is solid directly to gas.</p>
+<h3>2. Elements, compounds and mixtures</h3>
+<ul><li>An element contains only one type of atom.</li><li>A compound contains two or more elements chemically combined in fixed proportions.</li><li>A mixture contains substances physically combined in variable proportions and can often be separated by physical methods.</li></ul>
+<h3>3. Atomic structure</h3>
+<p>An atom has a central nucleus containing protons and neutrons, with electrons arranged in shells around it. A proton has charge +1, an electron −1 and a neutron 0. Atomic number is the number of protons. In a neutral atom, protons equal electrons.</p>
+<h3>4. Acids, bases and salts</h3>
+<p>Acids produce hydrogen ions in aqueous solution. Alkalis are soluble bases that produce hydroxide ions in water. A neutralisation reaction occurs when an acid reacts with a base to form a salt and water.</p>
+<div class="formula">Acid + base → salt + water</div>
+<p>At room temperature, a solution with pH 7 is neutral, below 7 is acidic and above 7 is alkaline. Universal indicator shows a range of colours according to pH.</p>
+<h3>5. Chemical equations</h3>
+<p>A balanced equation has the same number of atoms of each element on both sides. Change coefficients in front of formulae to balance equations; do not change the small numbers within chemical formulae.</p>
+<div class="topic"><b>Example:</b> \(2H_2 + O_2 \rightarrow 2H_2O\). There are four hydrogen atoms and two oxygen atoms on each side.</div>
+<h3>6. Metals and reactivity</h3>
+<p>Metals generally conduct heat and electricity, are malleable and form positive ions. More reactive metals displace less reactive metals from their compounds in solution. The reactivity series helps predict these reactions.</p>
+<h3>7. Rates of reaction</h3>
+<p>Reaction rate can be increased by raising temperature, increasing concentration (for solutions), increasing pressure (for gases), increasing surface area of a solid reactant, or adding a suitable catalyst. These changes increase the frequency of successful collisions or the proportion of collisions with enough energy.</p>
+<h3>8. Organic chemistry</h3>
+<p>Hydrocarbons contain carbon and hydrogen only. Alkanes are saturated hydrocarbons with single carbon-carbon bonds. Alkenes are unsaturated and contain at least one carbon-carbon double bond. Ethene is an example of an alkene.</p>
+<div class="exam"><b>Revision questions</b><ol><li>State the charges of a proton, neutron and electron.</li><li>Explain the difference between an element and a compound.</li><li>Balance: Mg + O₂ → MgO.</li><li>What is formed when an acid reacts with a base?</li><li>Give two factors that increase reaction rate.</li></ol></div>
+</section>
+
+<section class="subject-panel searchable" id="physics">
+<span class="tag">SUBJECT 04</span><h2>⚡ Physics</h2><p>Physics investigates energy, forces, motion, waves, electricity and matter.</p>
+<h3>1. Physical quantities and units</h3>
+<p>A physical quantity is measured and expressed using a number and a unit. SI base quantities include length (metre, m), mass (kilogram, kg), time (second, s), electric current (ampere, A) and temperature (kelvin, K).</p>
+<h3>2. Motion</h3>
+<p>Distance is the total path travelled. Displacement is the straight-line change in position in a stated direction. Speed is distance travelled per unit time. Velocity is displacement per unit time and has direction. Acceleration is change in velocity per unit time.</p>
+<div class="formula">Speed = distance ÷ time<br>Acceleration = change in velocity ÷ time</div>
+<h3>3. Forces</h3>
+<p>A force is a push or pull that can change an object's motion, direction or shape. The SI unit is the newton (N). Weight is the gravitational force on an object; mass is the amount of matter in it.</p>
+<div class="formula">Weight = mass × gravitational field strength<br>W = mg</div>
+<p>Balanced forces produce no resultant force. An unbalanced resultant force causes acceleration.</p>
+<h3>4. Work, energy and power</h3>
+<p>Work is done when a force causes movement in its direction. Energy is the ability to do work. Power is the rate of doing work or transferring energy.</p>
+<div class="formula">Work done = force × distance (in direction of force)<br>Power = work done ÷ time</div>
+<h3>5. Density and pressure</h3>
+<div class="formula">Density = mass ÷ volume<br>Pressure = force ÷ area</div>
+<p>Density is measured in kg/m³ or g/cm³. Pressure in a liquid increases with depth because of the weight of liquid above.</p>
+<h3>6. Electricity</h3>
+<p>Electric current is the rate of flow of charge. Potential difference is energy transferred per unit charge. Resistance opposes current.</p>
+<div class="formula">Current: I = Q ÷ t<br>Potential difference: V = E ÷ Q<br>Ohm's law: V = IR<br>Electrical power: P = VI</div>
+<p>In a series circuit, current is the same through each component. In a parallel circuit, potential difference across each branch is the same.</p>
+<h3>7. Waves</h3>
+<p>A wave transfers energy without overall transfer of matter. Transverse waves vibrate perpendicular to the direction of travel; longitudinal waves vibrate parallel to it.</p>
+<div class="formula">Wave speed = frequency × wavelength<br>v = fλ</div>
+<h3>8. Heat transfer</h3>
+<p>Conduction transfers thermal energy through a material without bulk movement of the material. Convection occurs by movement of fluids. Radiation transfers energy by electromagnetic waves and does not require a medium.</p>
+<div class="exam"><b>Revision questions</b><ol><li>A car travels 120 m in 6 s. Find its average speed.</li><li>Calculate the weight of a 5 kg object if g = 10 N/kg.</li><li>State the SI unit of electric current.</li><li>Write the equation linking voltage, current and resistance.</li><li>Name the three methods of heat transfer.</li></ol></div>
+</section>
+
+<section class="subject-panel searchable" id="computers">
+<span class="tag">SUBJECT 05</span><h2>💻 Computer Science</h2><p>Computer Science studies how computers represent, process, store and communicate information.</p>
+<h3>1. Hardware and software</h3>
+<p>Hardware is the physical equipment of a computer. Software is the programs and instructions that tell the computer what to do. The CPU processes instructions. Main memory stores data and instructions currently in use.</p>
+<h3>2. Input, processing, output and storage</h3>
+<ul><li><b>Input:</b> data entered into a computer, for example with a keyboard or scanner.</li><li><b>Processing:</b> operations performed on data by the CPU.</li><li><b>Output:</b> information produced, for example on a monitor or printer.</li><li><b>Storage:</b> keeping data for later use, for example on an SSD or memory card.</li></ul>
+<h3>3. Types of software</h3>
+<p>System software manages computer hardware and provides a platform for applications. An operating system manages files, memory, devices and running programs. Application software helps users perform tasks such as writing documents or browsing the web.</p>
+<h3>4. Data representation</h3>
+<p>Computers represent data using binary digits (bits), which are 0 and 1. Eight bits make one byte. Text, images, sound and numbers are encoded into binary patterns for computer processing and storage.</p>
+<h3>5. Networks and the internet</h3>
+<p>A computer network connects devices to share data and resources. A LAN covers a limited area such as a school. A WAN covers a larger geographical area. The internet is a global network of interconnected networks. The web is a service that operates over the internet.</p>
+<h3>6. Algorithms and flowcharts</h3>
+<p>An algorithm is a finite sequence of clear steps for solving a problem. A flowchart represents steps using symbols: an oval for start/end, a rectangle for process, a parallelogram for input/output and a diamond for a decision.</p>
+<h3>7. Cybersecurity and responsible use</h3>
+<p>Use strong, unique passwords; keep software updated; avoid suspicious links and attachments; back up important files; and never share passwords or private information. Respect copyright and other people's privacy.</p>
+<h3>8. Programming basics</h3>
+<p>A variable stores a value. A sequence runs instructions in order. Selection makes a decision, often using IF. Iteration repeats instructions, often using a loop. Testing helps identify and correct errors (bugs).</p>
+<div class="exam"><b>Revision questions</b><ol><li>Define hardware and software.</li><li>Give two input devices and two output devices.</li><li>What is an algorithm?</li><li>How many bits are in one byte?</li><li>State two ways to protect a computer account.</li></ol></div>
+</section>
+
+<section class="subject-panel searchable" id="geography">
+<span class="tag">SUBJECT 06</span><h2>🌍 Geography</h2><p>Geography studies places, people, environments and the relationships between them.</p>
+<h3>1. Weather and climate</h3>
+<p>Weather is the condition of the atmosphere at a particular place and time. Climate is the average pattern of weather over a long period. Elements of weather include temperature, rainfall, wind, humidity, air pressure, cloud cover and sunshine.</p>
+<h3>2. Weather instruments</h3>
+<ul><li>Thermometer measures temperature.</li><li>Rain gauge measures rainfall.</li><li>Wind vane shows wind direction.</li><li>Anemometer measures wind speed.</li><li>Barometer measures atmospheric pressure.</li><li>Hygrometer measures humidity.</li></ul>
+<h3>3. The water cycle</h3>
+<p>Water evaporates from water bodies and transpires from plants. Water vapour cools and condenses to form clouds. Precipitation returns water to the surface. Some water infiltrates the soil and some flows over the surface as runoff.</p>
+<h3>4. Rocks and the rock cycle</h3>
+<p>Igneous rocks form when magma or lava cools and solidifies. Sedimentary rocks form from deposited material that becomes compacted and cemented. Metamorphic rocks form when existing rocks are changed by heat and pressure without melting completely.</p>
+<h3>5. Weathering and erosion</h3>
+<p>Weathering is the breakdown of rock in place. Erosion is the wearing away and removal of material by agents such as rivers, wind, waves and ice. Deposition occurs when transported material is laid down.</p>
+<h3>6. Population</h3>
+<p>Population distribution describes how people are spread over an area. Population density is the number of people per unit area. Birth rate, death rate and migration affect population change.</p>
+<div class="formula">Population density = total population ÷ land area</div>
+<h3>7. Environmental management</h3>
+<p>Environmental problems include soil erosion, deforestation, pollution and loss of biodiversity. Sustainable practices include planting trees, protecting wetlands, managing waste, conserving water and using land carefully.</p>
+<div class="exam"><b>Revision questions</b><ol><li>Distinguish between weather and climate.</li><li>Name an instrument used to measure rainfall.</li><li>Describe the main stages of the water cycle.</li><li>Give two differences between weathering and erosion.</li><li>Define population density.</li></ol></div>
+</section>
+
+<section class="subject-panel searchable" id="history">
+<span class="tag">SUBJECT 07</span><h2>🏛️ History</h2><p>History is the study of the human past using evidence and careful interpretation.</p>
+<h3>1. Historical sources</h3>
+<p>Primary sources were produced during the period being studied, such as letters, photographs, tools, official records and eyewitness accounts. Secondary sources are later interpretations, such as textbooks and documentaries.</p>
+<h3>2. Evaluating sources</h3>
+<p>Ask who created a source, when and why it was created, who its intended audience was, what it says and what it leaves out. Consider whether it is reliable and compare it with other evidence. A source can be useful even if it is biased.</p>
+<h3>3. Causes and consequences</h3>
+<p>Historical events usually have several causes. These may be political, economic, social or environmental. A short-term trigger may bring tensions to a head, while long-term causes develop over many years. Consequences may be immediate or long-term.</p>
+<h3>4. Chronology</h3>
+<p>Chronology means arranging events in the order in which they happened. A timeline helps show sequence and the relationship between events. BCE means before the Common Era; CE means Common Era.</p>
+<h3>5. Change and continuity</h3>
+<p>Change describes what becomes different over time. Continuity describes what remains similar. Historians compare periods to understand the pace, extent and significance of change.</p>
+<h3>6. Writing a history answer</h3>
+<p>Read the command word carefully. Describe means give details; explain means give reasons and show how or why; compare means identify similarities and differences; assess means make a supported judgement. Support points with relevant evidence and dates where appropriate.</p>
+<div class="exam"><b>Revision questions</b><ol><li>What is a primary source?</li><li>Give two examples of secondary sources.</li><li>State three questions to ask when evaluating a source.</li><li>Explain the difference between a short-term trigger and a long-term cause.</li><li>What is chronology?</li></ol></div>
+</section>
+
+<section class="subject-panel searchable" id="english">
+<span class="tag">SUBJECT 08</span><h2>📖 English Language</h2><p>English Language develops reading, writing, speaking, listening, grammar and communication skills.</p>
+<h3>1. Parts of speech</h3>
+<ul><li><b>Noun:</b> names a person, place, thing or idea.</li><li><b>Pronoun:</b> replaces a noun, such as he, she, they or it.</li><li><b>Verb:</b> expresses an action or state.</li><li><b>Adjective:</b> describes a noun.</li><li><b>Adverb:</b> modifies a verb, adjective or another adverb.</li><li><b>Preposition:</b> shows a relationship, often of place or time.</li><li><b>Conjunction:</b> joins words, phrases or clauses.</li></ul>
+<h3>2. Sentence types</h3>
+<p>A simple sentence contains one independent clause. A compound sentence joins independent clauses. A complex sentence contains an independent clause and at least one subordinate clause. A sentence must express a complete thought.</p>
+<h3>3. Tenses</h3>
+<p>Present tense can describe current actions or general truths. Past tense describes completed past actions. Future forms refer to events expected later. Keep tense consistent unless the time meaning changes.</p>
+<h3>4. Punctuation</h3>
+<p>Use a full stop to end a statement, a question mark after a direct question, and a comma to separate items or mark certain pauses. Apostrophes show possession or omitted letters. Quotation marks indicate direct speech or quoted words.</p>
+<h3>5. Comprehension skills</h3>
+<p>Read the passage carefully. Identify the main idea, find evidence for answers, work out word meaning from context and distinguish fact from opinion. Answer in your own words when the question requires it.</p>
+<h3>6. Summary writing</h3>
+<p>Identify only the points relevant to the question. Use concise wording, avoid repetition and unnecessary examples, and keep within the required word limit. Do not add your own opinions unless asked.</p>
+<h3>7. Composition writing</h3>
+<p>Plan the purpose, audience and structure before writing. Organise ideas into paragraphs, use suitable vocabulary and linking words, and check spelling, punctuation and grammar. A narrative tells a story; a descriptive composition creates a clear impression; an argumentative composition presents and supports a position.</p>
+<div class="exam"><b>Revision activities</b><ol><li>Identify the verb in: “The children played outside.”</li><li>Change “She writes a letter” into the past tense.</li><li>Write one example of a complex sentence.</li><li>Explain the purpose of an apostrophe.</li><li>List three steps in writing a good summary.</li></ol></div>
+</section>
+
+<section class="subject-panel searchable" id="agriculture">
+<span class="tag">SUBJECT 09</span><h2>🌾 Agriculture</h2><p>Agriculture involves crop and animal production, soil management and the responsible use of natural resources.</p>
+<h3>1. Soil components</h3>
+<p>Soil contains mineral particles, organic matter, water, air and living organisms. Sand particles are relatively large and drain quickly. Clay particles are very small and hold more water. Loam has a useful mixture of sand, silt and clay.</p>
+<h3>2. Soil fertility</h3>
+<p>Soil fertility is the ability of soil to supply nutrients needed for plant growth. It can be improved through suitable fertilisers, compost, manure, crop rotation and planting legumes. Apply fertilisers according to recommended rates and safe handling instructions.</p>
+<h3>3. Crop production</h3>
+<p>Healthy crop production requires suitable seed, land preparation, correct planting depth and spacing, water, nutrients and weed control. Choose crops suited to local climate and soil conditions.</p>
+<h3>4. Crop rotation</h3>
+<p>Crop rotation means growing different crops on the same land in a planned sequence. Including legumes can help improve soil nitrogen when suitable conditions and management are present. Rotation can also help break pest and disease cycles.</p>
+<h3>5. Soil erosion and conservation</h3>
+<p>Soil erosion is the removal of topsoil by water or wind. It can reduce soil fertility and damage waterways. Conservation methods include contour cultivation, terracing where suitable, mulching, cover crops, grass strips and maintaining vegetation.</p>
+<h3>6. Livestock management</h3>
+<p>Good livestock management includes suitable housing, clean water, balanced feed, hygiene, regular observation and veterinary guidance. Keep records of breeding, feeding, production and animal health.</p>
+<h3>7. Farm records</h3>
+<p>Farm records help farmers monitor costs, income, inputs, yields, livestock numbers and production. Accurate records support planning and decision-making.</p>
+<div class="exam"><b>Revision questions</b><ol><li>Name five components of soil.</li><li>What is soil fertility?</li><li>Give two benefits of crop rotation.</li><li>State three ways to reduce soil erosion.</li><li>Give three examples of useful farm records.</li></ol></div>
+</section>
+
+<section class="subject-panel searchable" id="revision">
+<span class="tag">STUDY SKILLS</span><h2>📝 How to revise effectively</h2>
+<ul><li>Study one topic at a time and write a short summary in your own words.</li><li>Practise questions without looking at the notes first.</li><li>Mark your answers and correct mistakes by returning to the relevant topic.</li><li>Use labelled diagrams for topics such as cells, circuits, maps and laboratory apparatus.</li><li>Ask your teacher which syllabus topics and examination requirements apply to your class.</li></ul>
+<div class="exam"><b>Note:</b> The questions on this page are original revision exercises, not official past examination papers. Use official school or examination-board materials for past papers.</div>
+</section>
+
+</div></div>
+</main>
+<footer><b>MACMILLAN ONLINE V11</b><p>Expanded Study Library • Learn • Play • Explore</p><p>© 2026 Macmillan Online</p></footer>
 <script>
-const banks = {"Mathematics": [{"q": "Answer this revision question: What is 25% of 200?", "a": "50"}, {"q": "Test yourself: What is 25% of 200?", "a": "50"}, {"q": "Write a short answer to this: What is 25% of 200?", "a": "50"}, {"q": "Check your understanding: What is 25% of 200?", "a": "50"}, {"q": "In your own words, answer: What is 25% of 200?", "a": "50"}, {"q": "Recall the correct answer: What is 25% of 200?", "a": "50"}, {"q": "Revision task: What is 25% of 200?", "a": "50"}, {"q": "What would you write for this question? What is 25% of 200?", "a": "50"}, {"q": "Practise this key point: What is 25% of 200?", "a": "50"}, {"q": "Exam practice: What is 25% of 200?", "a": "50"}, {"q": "Answer this revision question: Simplify 18:24.", "a": "3:4"}, {"q": "Test yourself: Simplify 18:24.", "a": "3:4"}, {"q": "Write a short answer to this: Simplify 18:24.", "a": "3:4"}, {"q": "Check your understanding: Simplify 18:24.", "a": "3:4"}, {"q": "In your own words, answer: Simplify 18:24.", "a": "3:4"}, {"q": "Recall the correct answer: Simplify 18:24.", "a": "3:4"}, {"q": "Revision task: Simplify 18:24.", "a": "3:4"}, {"q": "What would you write for this question? Simplify 18:24.", "a": "3:4"}, {"q": "Practise this key point: Simplify 18:24.", "a": "3:4"}, {"q": "Exam practice: Simplify 18:24.", "a": "3:4"}, {"q": "Answer this revision question: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "Test yourself: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "Write a short answer to this: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "Check your understanding: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "In your own words, answer: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "Recall the correct answer: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "Revision task: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "What would you write for this question? Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "Practise this key point: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "Exam practice: Solve 3x + 4 = 19.", "a": "x = 5"}, {"q": "Answer this revision question: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "Test yourself: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "Write a short answer to this: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "Check your understanding: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "In your own words, answer: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "Recall the correct answer: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "Revision task: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "What would you write for this question? Expand 4(x + 3).", "a": "4x + 12"}, {"q": "Practise this key point: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "Exam practice: Expand 4(x + 3).", "a": "4x + 12"}, {"q": "Answer this revision question: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "Test yourself: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "Write a short answer to this: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "Check your understanding: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "In your own words, answer: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "Recall the correct answer: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "Revision task: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "What would you write for this question? Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "Practise this key point: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "Exam practice: Factorise 8x + 12.", "a": "4(2x + 3)"}, {"q": "Answer this revision question: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "Test yourself: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "Write a short answer to this: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "Check your understanding: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "In your own words, answer: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "Recall the correct answer: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "Revision task: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "What would you write for this question? Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "Practise this key point: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "Exam practice: Find the mean of 2, 4, 6 and 8.", "a": "5"}, {"q": "Answer this revision question: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "Test yourself: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "Write a short answer to this: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "Check your understanding: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "In your own words, answer: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "Recall the correct answer: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "Revision task: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "What would you write for this question? Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "Practise this key point: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "Exam practice: Find the median of 3, 7, 2, 9 and 5.", "a": "5"}, {"q": "Answer this revision question: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "Test yourself: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "Write a short answer to this: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "Check your understanding: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "In your own words, answer: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "Recall the correct answer: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "Revision task: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "What would you write for this question? Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "Practise this key point: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "Exam practice: Find the range of 4, 11, 6 and 8.", "a": "7"}, {"q": "Answer this revision question: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "Test yourself: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "Write a short answer to this: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "Check your understanding: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "In your own words, answer: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "Recall the correct answer: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "Revision task: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "What would you write for this question? What is the sum of angles in a triangle?", "a": "180°"}, {"q": "Practise this key point: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "Exam practice: What is the sum of angles in a triangle?", "a": "180°"}, {"q": "Answer this revision question: What is the sum of angles around a point?", "a": "360°"}, {"q": "Test yourself: What is the sum of angles around a point?", "a": "360°"}, {"q": "Write a short answer to this: What is the sum of angles around a point?", "a": "360°"}, {"q": "Check your understanding: What is the sum of angles around a point?", "a": "360°"}, {"q": "In your own words, answer: What is the sum of angles around a point?", "a": "360°"}, {"q": "Recall the correct answer: What is the sum of angles around a point?", "a": "360°"}, {"q": "Revision task: What is the sum of angles around a point?", "a": "360°"}, {"q": "What would you write for this question? What is the sum of angles around a point?", "a": "360°"}, {"q": "Practise this key point: What is the sum of angles around a point?", "a": "360°"}, {"q": "Exam practice: What is the sum of angles around a point?", "a": "360°"}, {"q": "Answer this revision question: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "Test yourself: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "Write a short answer to this: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "Check your understanding: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "In your own words, answer: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "Recall the correct answer: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "Revision task: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "What would you write for this question? Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "Practise this key point: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "Exam practice: Find the area of a rectangle 8 cm by 5 cm.", "a": "40 cm²"}, {"q": "Answer this revision question: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "Test yourself: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "Write a short answer to this: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "Check your understanding: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "In your own words, answer: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "Recall the correct answer: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "Revision task: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "What would you write for this question? Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "Practise this key point: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "Exam practice: Find the perimeter of a square of side 6 cm.", "a": "24 cm"}, {"q": "Answer this revision question: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "Test yourself: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "Write a short answer to this: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "Check your understanding: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "In your own words, answer: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "Recall the correct answer: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "Revision task: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "What would you write for this question? Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "Practise this key point: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "Exam practice: Find the area of a triangle with base 10 cm and height 6 cm.", "a": "30 cm²"}, {"q": "Answer this revision question: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "Test yourself: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "Write a short answer to this: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "Check your understanding: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "In your own words, answer: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "Recall the correct answer: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "Revision task: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "What would you write for this question? Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "Practise this key point: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "Exam practice: Find the circumference of a circle of radius 7 cm using π = 22/7.", "a": "44 cm"}, {"q": "Answer this revision question: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "Test yourself: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "Write a short answer to this: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "Check your understanding: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "In your own words, answer: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "Recall the correct answer: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "Revision task: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "What would you write for this question? State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "Practise this key point: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "Exam practice: State Pythagoras' theorem.", "a": "a² + b² = c² for a right-angled triangle"}, {"q": "Answer this revision question: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "Test yourself: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "Write a short answer to this: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "Check your understanding: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "In your own words, answer: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "Recall the correct answer: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "Revision task: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "What would you write for this question? Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "Practise this key point: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "Exam practice: Convert 0.75 to a fraction in simplest form.", "a": "3/4"}, {"q": "Answer this revision question: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "Test yourself: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "Write a short answer to this: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "Check your understanding: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "In your own words, answer: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "Recall the correct answer: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "Revision task: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "What would you write for this question? Convert 3/5 to a percentage.", "a": "60%"}, {"q": "Practise this key point: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "Exam practice: Convert 3/5 to a percentage.", "a": "60%"}, {"q": "Answer this revision question: Evaluate 2³ × 2².", "a": "32"}, {"q": "Test yourself: Evaluate 2³ × 2².", "a": "32"}, {"q": "Write a short answer to this: Evaluate 2³ × 2².", "a": "32"}, {"q": "Check your understanding: Evaluate 2³ × 2².", "a": "32"}, {"q": "In your own words, answer: Evaluate 2³ × 2².", "a": "32"}, {"q": "Recall the correct answer: Evaluate 2³ × 2².", "a": "32"}, {"q": "Revision task: Evaluate 2³ × 2².", "a": "32"}, {"q": "What would you write for this question? Evaluate 2³ × 2².", "a": "32"}, {"q": "Practise this key point: Evaluate 2³ × 2².", "a": "32"}, {"q": "Exam practice: Evaluate 2³ × 2².", "a": "32"}, {"q": "Answer this revision question: Solve 5y = 45.", "a": "y = 9"}, {"q": "Test yourself: Solve 5y = 45.", "a": "y = 9"}, {"q": "Write a short answer to this: Solve 5y = 45.", "a": "y = 9"}, {"q": "Check your understanding: Solve 5y = 45.", "a": "y = 9"}, {"q": "In your own words, answer: Solve 5y = 45.", "a": "y = 9"}, {"q": "Recall the correct answer: Solve 5y = 45.", "a": "y = 9"}, {"q": "Revision task: Solve 5y = 45.", "a": "y = 9"}, {"q": "What would you write for this question? Solve 5y = 45.", "a": "y = 9"}, {"q": "Practise this key point: Solve 5y = 45.", "a": "y = 9"}, {"q": "Exam practice: Solve 5y = 45.", "a": "y = 9"}, {"q": "Answer this revision question: What is the probability of getting a head on a fair coin?", "a": "1/2"}, {"q": "Test yourself: What is the probability of getting a head on a fair coin?", "a": "1/2"}, {"q": "Write a short answer to this: What is the probability of getting a head on a fair coin?", "a": "1/2"}, {"q": "Check your understanding: What is the probability of getting a head on a fair coin?", "a": "1/2"}, {"q": "In your own words, answer: What is the probability of getting a head on a fair coin?", "a": "1/2"}, {"q": "Recall the correct answer: What is the probability of getting a hea
+function filterNotes(){
+ const term=document.getElementById('noteSearch').value.trim().toLowerCase();
+ const panels=[...document.querySelectorAll('.subject-panel')];let count=0;
+ panels.forEach(panel=>{const match=!term||panel.innerText.toLowerCase().includes(term);panel.classList.toggle('hidden',!match);if(match)count++});
+ document.getElementById('searchStatus').textContent=term?count+' matching section(s) found.':'Showing all subjects.';
+}
+function clearSearch(){document.getElementById('noteSearch').value='';filterNotes()}
+</script>
+</body></html>
