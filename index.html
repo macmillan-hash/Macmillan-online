@@ -1,653 +1,201 @@
-HTML
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Macmillan Online</title>
-
+<meta name="description" content="Macmillan Online — learn, play and explore with student-friendly lessons, quizzes and games.">
+<title>Macmillan Online | Learn • Play • Explore</title>
 <style>
-* { box-sizing: border-box; }
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f3f7f5;
-    color: #193329;
-}
-
-header {
-    background: #063d2a;
-    color: white;
-    padding: 18px;
-    text-align: center;
-}
-
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-icon {
-    background: #19a66b;
-    padding: 12px;
-    border-radius: 12px;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-header h1 { margin: 0; }
-
-header p { color: #a9eac9; }
-
-nav {
-    background: #092d21;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5px;
-    padding: 12px;
-}
-
-nav button {
-    background: transparent;
-    border: 1px solid #42c98d;
-    color: white;
-    padding: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-nav button:hover {
-    background: #168452;
-}
-
-.hero {
-    background: linear-gradient(120deg,#d0f5df,#e9f9ef);
-    text-align: center;
-    padding: 35px 15px;
-}
-
-.hero h2 {
-    color: #075b39;
-    font-size: 27px;
-}
-
-.search {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    padding: 15px;
-}
-
-input {
-    padding: 12px;
-    border: 1px solid #aab9b0;
-    border-radius: 6px;
-    max-width: 100%;
-}
-
-.search input { width: 65%; }
-
-.container {
-    max-width: 950px;
-    margin: auto;
-    padding: 15px;
-}
-
-.section { display: none; }
-.section.active { display: block; }
-
-.card {
-    background: white;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px #00000010;
-}
-
-.card h3 { color: #087344; }
-
-.action {
-    background: #087344;
-    color: white;
-    border: none;
-    padding: 12px 16px;
-    border-radius: 6px;
-    margin: 5px 3px;
-    cursor: pointer;
-}
-
-.action:hover { background: #07532f; }
-
-.ad-space {
-    background: #e7ece9;
-    border: 2px dashed #83968a;
-    padding: 25px 10px;
-    text-align: center;
-    border-radius: 10px;
-    margin: 20px 0;
-    color: #536158;
-}
-
-.ad-space small { display: block; }
-
-.game-score {
-    font-size: 25px;
-    color: #087344;
-    font-weight: bold;
-}
-
-footer {
-    background: #063d2a;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 30px;
-}
-
-#loginBox {
-    max-width: 420px;
-    margin: auto;
-}
-
-#loginBox input {
-    width: 100%;
-    margin: 7px 0;
-}
-
-#accountMessage { color: #087344; }
-
-.result {
-    font-weight: bold;
-    margin-top: 12px;
-}
-
-.hidden { display: none; }
-
-@media(max-width:500px) {
-    nav button { font-size: 12px; padding: 9px; }
-    .hero h2 { font-size: 22px; }
-}
+:root{--navy:#102a56;--blue:#1769d2;--sky:#eaf3ff;--gold:#ffca55;--ink:#17243a;--muted:#64748b;--white:#fff;--line:#dbe5f1;--green:#16845b}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f8fc;color:var(--ink);line-height:1.6}
+header{background:linear-gradient(120deg,#102a56,#1769d2);color:white;padding:18px 5%;position:sticky;top:0;z-index:10;box-shadow:0 4px 18px #102a5625}
+.top{max-width:1150px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:11px}
+.logo{width:46px;height:46px;border-radius:14px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-size:25px;font-weight:900}
+.brand h1{font-size:20px;line-height:1.1;margin:0;letter-spacing:.4px}
+.brand small{color:#dceaff;letter-spacing:1.4px;font-size:10px}
+nav{display:flex;gap:7px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;padding:8px 11px;border-radius:8px;font-size:13px;font-weight:bold}
+nav a:hover,nav a:focus{background:#ffffff25}
+main{max-width:1150px;margin:auto;padding:24px 5% 60px}
+.hero{background:linear-gradient(120deg,#e6f1ff,#fff);border:1px solid #d7e7fa;border-radius:22px;padding:35px;display:grid;grid-template-columns:1.4fr .8fr;gap:20px;align-items:center}
+.hero h2{font-size:clamp(29px,5vw,45px);line-height:1.12;color:var(--navy);margin:0 0 12px}
+.hero p{color:#53657d;max-width:570px}
+.hero-art{font-size:100px;text-align:center}
+.eyebrow{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:1.7px;text-transform:uppercase}
+.btn{border:0;border-radius:9px;background:var(--blue);color:white;padding:11px 16px;font-weight:bold;cursor:pointer}
+.btn:hover{filter:brightness(.92)}
+.btn.secondary{background:white;color:var(--navy);border:1px solid var(--line)}
+.searchbar{display:flex;gap:8px;max-width:650px;margin:22px 0 5px}
+input,select{width:100%;padding:12px;border:1px solid #cbd7e6;border-radius:9px;font:inherit;background:white;color:var(--ink)}
+section{margin-top:34px;scroll-margin-top:100px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:15px}
+h2.section-title{font-size:25px;color:var(--navy);margin:0}
+.muted{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.card{background:white;border:1px solid var(--line);border-radius:15px;padding:19px;box-shadow:0 5px 16px #102a5608}
+.card h3{margin:5px 0 8px;color:var(--navy)}
+.card p{margin:7px 0}
+.pill{display:inline-block;background:var(--sky);color:#1456a5;border-radius:20px;padding:4px 10px;font-size:11px;font-weight:bold}
+.subject{font-size:27px}
+.lesson{border-left:4px solid var(--blue);padding:9px 12px;background:#f6faff;border-radius:0 8px 8px 0;margin:10px 0}
+.quiz-option{display:block;width:100%;text-align:left;margin:7px 0;background:#f5f8fc;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px;cursor:pointer}
+.quiz-option:hover{border-color:var(--blue);background:var(--sky)}
+.feedback{font-weight:bold;margin-top:8px;min-height:25px}
+.game-area{background:#f6faff;border-radius:10px;padding:12px;margin-top:10px}
+.big-number{font-size:32px;font-weight:900;color:var(--blue)}
+.ad-slot{border:2px dashed #c5d3e5;border-radius:12px;padding:17px;text-align:center;color:var(--muted);background:#fbfdff}
+footer{background:var(--navy);color:white;padding:25px 5%;text-align:center}
+footer p{margin:5px}
+.hidden{display:none!important}
+.result{font-weight:bold;color:var(--green);min-height:24px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:24px}.hero-art{font-size:68px}.grid{grid-template-columns:1fr 1fr}header{position:static}}
+@media(max-width:500px){.grid{grid-template-columns:1fr}.searchbar{flex-direction:column}.brand h1{font-size:17px}nav a{padding:7px;font-size:12px}}
 </style>
 </head>
-
 <body>
-
 <header>
-    <div class="logo">
-        <div class="logo-icon">M</div>
-        <div>
-            <h1>MACMILLAN ONLINE</h1>
-            <small>LEARN • PLAY • EXPLORE</small>
-        </div>
-    </div>
-    <p id="welcome">Your world of knowledge and entertainment.</p>
+ <div class="top">
+  <div class="brand"><div class="logo">M</div><div><h1>MACMILLAN ONLINE</h1><small>LEARN • PLAY • EXPLORE</small></div></div>
+  <nav aria-label="Main navigation">
+   <a href="#home">Home</a><a href="#education">Education</a><a href="#quizzes">Quizzes</a><a href="#games">Games</a><a href="#technology">Technology</a><a href="#account">Account</a>
+  </nav>
+ </div>
 </header>
-
-<nav>
-    <button onclick="showPage('home')">Home</button>
-    <button onclick="showPage('education')">Education</button>
-    <button onclick="showPage('gaming')">Gaming</button>
-    <button onclick="showPage('technology')">Technology</button>
-    <button onclick="showPage('entertainment')">Entertainment</button>
-    <button onclick="showPage('account')">My Account</button>
-</nav>
-
-<div class="hero">
-    <h2>Discover Something New!</h2>
-    <p>Learn, play games and explore the world.</p>
-</div>
-
-<div class="search">
-    <input id="searchInput"
-    placeholder="Search Macmillan Online..."
-    onkeydown="if(event.key==='Enter') searchSite()">
-
-    <button class="action" onclick="searchSite()">Search</button>
-</div>
-
-<div class="container">
-
-<!-- HOME -->
-
-<div id="home" class="section active">
-
-    <div class="card">
-        <h2>Welcome to Macmillan Online!</h2>
-        <p>Your online centre for education, gaming, technology and entertainment.</p>
-        <button class="action" onclick="showPage('education')">Start Learning</button>
-        <button class="action" onclick="showPage('gaming')">Play Games</button>
-    </div>
-
-    <div class="card searchable">
-        <h3>📚 Education Centre</h3>
-        <p>Read school notes and test your knowledge.</p>
-        <button class="action" onclick="showPage('education')">Explore Education</button>
-    </div>
-
-    <div class="card searchable">
-        <h3>🎮 Gaming Centre</h3>
-        <p>Enjoy fun games and improve your scores.</p>
-        <button class="action" onclick="showPage('gaming')">Play Now</button>
-    </div>
-
-    <div class="card searchable">
-        <h3>💻 Technology Centre</h3>
-        <p>Learn HTML, CSS, JavaScript and computers.</p>
-        <button class="action" onclick="showPage('technology')">Learn Technology</button>
-    </div>
-
-    <div class="card searchable">
-        <h3>🎬 Entertainment Centre</h3>
-        <p>Explore interesting facts and fun quizzes.</p>
-        <button class="action" onclick="showPage('entertainment')">Explore</button>
-    </div>
-
-</div>
-
-<!-- EDUCATION -->
-
-<div id="education" class="section">
-
-<h2>📚 Education Centre</h2>
-
-<div class="card searchable">
-<h3>Mathematics: Algebra</h3>
-<p>Algebra uses letters and symbols to represent numbers.</p>
-<p>Example: x + 5 = 12</p>
-<p>Subtract 5 from both sides:</p>
-<p><b>x = 7</b></p>
-</div>
-
-<div class="card searchable">
-<h3>Biology: Photosynthesis</h3>
-<p>Photosynthesis is the process by which green plants make food using light energy.</p>
-<p>Requirements:</p>
-<ul>
-<li>Sunlight</li>
-<li>Water</li>
-<li>Carbon dioxide</li>
-<li>Chlorophyll</li>
-</ul>
-<p>Products: Glucose and oxygen.</p>
-</div>
-
-<div class="card searchable">
-<h3>Chemistry: Acids and Bases</h3>
-<p>Acids have a pH below 7.</p>
-<p>Neutral substances have a pH of 7.</p>
-<p>Alkalis have a pH above 7.</p>
-</div>
-
-<div class="card searchable">
-<h3>Physics: Electricity</h3>
-<p>Ohm's law states that voltage equals current multiplied by resistance.</p>
-<p><b>V = I × R</b></p>
-</div>
-
-<div class="card">
-<h3>📝 Biology Quiz</h3>
-<p>Which organ pumps blood around the body?</p>
-
-<button class="action" onclick="answerQuiz('brain')">Brain</button>
-<button class="action" onclick="answerQuiz('heart')">Heart</button>
-<button class="action" onclick="answerQuiz('lungs')">Lungs</button>
-
-<p id="quizResult" class="result"></p>
-</div>
-
-<div class="card">
-<h3>📝 Mathematics Quiz</h3>
-<p>What is 8 × 7?</p>
-
-<button class="action" onclick="mathQuiz(54)">54</button>
-<button class="action" onclick="mathQuiz(56)">56</button>
-<button class="action" onclick="mathQuiz(64)">64</button>
-
-<p id="mathResult" class="result"></p>
-</div>
-
-</div>
-
-<!-- GAMING -->
-
-<div id="gaming" class="section">
-
-<h2>🎮 Gaming Centre</h2>
-
-<div class="card">
-<h3>Game 1: Click the Star</h3>
-<p>Click the star as many times as you can.</p>
-<p class="game-score">Score: <span id="starScore">0</span></p>
-
-<button class="action" style="font-size:35px"
-onclick="starGame()">⭐</button>
-
-<button class="action" onclick="resetStar()">Reset</button>
-</div>
-
-<div class="card">
-<h3>Game 2: Number Guessing</h3>
-<p>Guess a number between 1 and 10.</p>
-
-<input id="guessInput" type="number"
-min="1" max="10" placeholder="Your guess">
-
-<button class="action" onclick="guessGame()">Guess</button>
-
-<p id="guessResult" class="result"></p>
-</div>
-
-<div class="card">
-<h3>Game 3: Rock, Paper, Scissors</h3>
-<p>Choose your move:</p>
-
-<button class="action" onclick="playRPS('Rock')">🪨 Rock</button>
-<button class="action" onclick="playRPS('Paper')">📄 Paper</button>
-<button class="action" onclick="playRPS('Scissors')">✂ Scissors</button>
-
-<p id="rpsResult" class="result"></p>
-</div>
-
-</div>
-
-<!-- TECHNOLOGY -->
-
-<div id="technology" class="section">
-
-<h2>💻 Technology Centre</h2>
-
-<div class="card searchable">
-<h3>What is HTML?</h3>
-<p>HTML is the language used to structure webpages.</p>
-</div>
-
-<div class="card searchable">
-<h3>What is CSS?</h3>
-<p>CSS controls colours, fonts, layouts and website designs.</p>
-</div>
-
-<div class="card searchable">
-<h3>What is JavaScript?</h3>
-<p>JavaScript makes websites interactive.</p>
-</div>
-
-<div class="card searchable">
-<h3>Useful Computer Shortcuts</h3>
-<ul>
-<li>Ctrl + C: Copy</li>
-<li>Ctrl + V: Paste</li>
-<li>Ctrl + S: Save</li>
-<li>Ctrl + Z: Undo</li>
-<li>Alt + Tab: Switch windows</li>
-</ul>
-</div>
-
-</div>
-
-<!-- ENTERTAINMENT -->
-
-<div id="entertainment" class="section">
-
-<h2>🎬 Entertainment Centre</h2>
-
-<div class="card">
-<h3>Interesting Facts</h3>
-<p id="fact">Press the button to discover a fact.</p>
-<button class="action" onclick="showFact()">Show Fact</button>
-</div>
-
-<div class="card">
-<h3>Fun Quiz</h3>
-<p>Which planet is called the Red Planet?</p>
-
-<button class="action" onclick="planetQuiz('Mars')">Mars</button>
-<button class="action" onclick="planetQuiz('Venus')">Venus</button>
-<button class="action" onclick="planetQuiz('Earth')">Earth</button>
-
-<p id="planetResult" class="result"></p>
-</div>
-
-</div>
-
-<!-- USER ACCOUNT -->
-
-<div id="account" class="section">
-
-<h2>👤 My Account</h2>
-
-<div class="card" id="loginBox">
-
-<h3>Demo Registration / Login</h3>
-
-<p>Enter a display name to create or open your local demo profile.</p>
-
-<input id="username" placeholder="Choose a display name">
-
-<button class="action" onclick="registerUser()">Register / Login</button>
-
-<p id="accountMessage"></p>
-
-<button class="action" onclick="logoutUser()">Log Out</button>
-
-<p><small>This is a demonstration profile, not a real online account.</small></p>
-
-</div>
-
-</div>
-
-<!-- ADVERTISEMENT AREA -->
-
-<div class="ad-space" id="adArea">
-<strong>ADVERTISEMENT</strong>
-<p>Advertising space reserved for an approved advertising provider.</p>
-<small>No advertisements are running yet.</small>
-</div>
-
-</div>
-
-<footer>
-<h3>🌍 MACMILLAN ONLINE</h3>
-<p>Learn • Play • Explore</p>
-<p>© 2026 Macmillan Online</p>
-</footer>
+<main>
+<section id="home" class="hero">
+ <div><div class="eyebrow">Your learning adventure starts here</div><h2>Learn something new. Every day.</h2>
+ <p>Student-friendly notes, quick quizzes and fun games for curious learners. Start with a subject below and keep building your knowledge.</p>
+ <a class="btn" href="#education" style="display:inline-block;text-decoration:none">Start learning</a>
+ <div class="searchbar"><input id="siteSearch" type="search" placeholder="Search notes, subjects or games..." aria-label="Search website"><button class="btn" onclick="searchSite()">Search</button></div>
+ <p class="muted" id="searchMessage" aria-live="polite"></p></div>
+ <div class="hero-art" aria-hidden="true">📚💡🎓</div>
+</section>
+
+<section id="education">
+ <div class="section-head"><div><div class="eyebrow">Study centre</div><h2 class="section-title">Education Centre</h2></div><span class="muted">Short revision notes</span></div>
+ <div class="grid" id="lessonGrid">
+  <article class="card searchable"><span class="pill">MATHEMATICS</span><div class="subject">➗</div><h3>Algebra</h3><p>Algebra uses letters to represent unknown numbers.</p><div class="lesson"><b>Example:</b> x + 5 = 12<br>Subtract 5 from both sides: x = 7.</div><p><b>Remember:</b> Do the same operation to both sides of an equation.</p></article>
+  <article class="card searchable"><span class="pill">BIOLOGY</span><div class="subject">🌱</div><h3>Photosynthesis</h3><p>Green plants make glucose using light energy.</p><div class="lesson"><b>Requirements:</b> light, water, carbon dioxide and chlorophyll.</div><p><b>Products:</b> glucose and oxygen.</p></article>
+  <article class="card searchable"><span class="pill">CHEMISTRY</span><div class="subject">🧪</div><h3>Acids and bases</h3><p>Acids have pH below 7, neutral solutions have pH 7, and alkaline solutions have pH above 7.</p><div class="lesson"><b>Indicator:</b> Blue litmus turns red in an acid.</div></article>
+  <article class="card searchable"><span class="pill">PHYSICS</span><div class="subject">⚡</div><h3>Electricity: Ohm's law</h3><p>At constant temperature, current is proportional to voltage.</p><div class="lesson"><b>Formula:</b> V = I × R<br>Voltage = current × resistance.</div></article>
+  <article class="card searchable"><span class="pill">COMPUTER SCIENCE</span><div class="subject">💻</div><h3>Computer hardware</h3><p>Hardware means the physical parts of a computer.</p><div class="lesson"><b>Examples:</b> keyboard, monitor, mouse, processor and printer.</div></article>
+  <article class="card searchable"><span class="pill">GEOGRAPHY</span><div class="subject">🌍</div><h3>Weather and climate</h3><p>Weather describes short-term atmospheric conditions. Climate is the average weather pattern of a place over a long period.</p></article>
+  <article class="card searchable"><span class="pill">ENGLISH</span><div class="subject">📖</div><h3>Parts of speech</h3><p>Nouns name people, places or things. Verbs show actions or states. Adjectives describe nouns.</p></article>
+  <article class="card searchable"><span class="pill">HISTORY</span><div class="subject">🏛️</div><h3>Using historical sources</h3><p>Historians study written, oral, archaeological and visual sources to learn about the past.</p></article>
+  <article class="card searchable"><span class="pill">AGRICULTURE</span><div class="subject">🌾</div><h3>Soil conservation</h3><p>Soil can be protected through contour ploughing, mulching, crop rotation and planting cover crops.</p></article>
+ </div>
+</section>
+
+<section id="quizzes">
+ <div class="section-head"><div><div class="eyebrow">Check what you know</div><h2 class="section-title">Quick Quizzes</h2></div><span class="muted">Choose an answer to get feedback</span></div>
+ <div class="grid">
+  <article class="card searchable"><span class="pill">BIOLOGY</span><h3>Which organ pumps blood around the body?</h3><div id="bioOptions"></div><div class="feedback" id="bioFeedback" aria-live="polite"></div></article>
+  <article class="card searchable"><span class="pill">MATHEMATICS</span><h3>What is 8 × 7?</h3><div id="mathOptions"></div><div class="feedback" id="mathFeedback" aria-live="polite"></div></article>
+  <article class="card searchable"><span class="pill">CHEMISTRY</span><h3>What is the pH of a neutral solution at room temperature?</h3><div id="chemOptions"></div><div class="feedback" id="chemFeedback" aria-live="polite"></div></article>
+ </div>
+ <p class="muted">Quiz scores are shown on this device only.</p>
+</section>
+
+<section id="games">
+ <div class="section-head"><div><div class="eyebrow">Take a short break</div><h2 class="section-title">Gaming Centre</h2></div></div>
+ <div class="grid">
+  <article class="card searchable"><span class="pill">GAME 1</span><h3>Click the Star</h3><p>Tap the star and try to beat your score.</p><div class="game-area"><div>Score: <span class="big-number" id="starScore">0</span></div><button class="btn" onclick="addStar()">⭐ Click me!</button> <button class="btn secondary" onclick="resetStar()">Reset</button></div></article>
+  <article class="card searchable"><span class="pill">GAME 2</span><h3>Number Guessing</h3><p>Guess a number from 1 to 10.</p><div class="game-area"><input id="guessInput" type="number" min="1" max="10" placeholder="Enter 1 to 10"><button class="btn" onclick="guessNumber()">Guess</button><p id="guessFeedback" class="result" aria-live="polite"></p><button class="btn secondary" onclick="newNumber()">New number</button></div></article>
+  <article class="card searchable"><span class="pill">GAME 3</span><h3>Rock, Paper, Scissors</h3><p>Choose your move.</p><div class="game-area"><button class="btn" onclick="playRPS('Rock')">🪨 Rock</button> <button class="btn" onclick="playRPS('Paper')">📄 Paper</button> <button class="btn" onclick="playRPS('Scissors')">✂️ Scissors</button><p id="rpsResult" class="result" aria-live="polite"></p></div></article>
+ </div>
+</section>
+
+<section id="technology">
+ <div class="section-head"><div><div class="eyebrow">Digital skills</div><h2 class="section-title">Technology Centre</h2></div></div>
+ <div class="grid">
+  <article class="card searchable"><h3>HTML</h3><p>HTML gives a webpage its structure, such as headings, paragraphs, images and links.</p></article>
+  <article class="card searchable"><h3>CSS</h3><p>CSS controls how a webpage looks, including colours, spacing, fonts and layout.</p></article>
+  <article class="card searchable"><h3>JavaScript</h3><p>JavaScript adds behaviour, such as interactive buttons, quizzes and games.</p></article>
+ </div>
+</section>
+
+<section id="account">
+ <div class="section-head"><div><div class="eyebrow">On this device</div><h2 class="section-title">My Learning Profile</h2></div></div>
+ <div class="card">
+  <p>This simple profile stores a display name in this browser only. It is not a real online account and does not use a password.</p>
+  <label for="displayName"><b>Display name</b></label>
+  <div class="searchbar"><input id="displayName" maxlength="24" placeholder="Choose a display name"><button class="btn" onclick="saveProfile()">Save profile</button></div>
+  <p id="profileMessage" class="result" aria-live="polite"></p>
+  <button class="btn secondary" onclick="clearProfile()">Clear profile</button>
+ </div>
+</section>
+
+<section id="advertising">
+ <div class="section-head"><div><div class="eyebrow">Future partner space</div><h2 class="section-title">Advertising</h2></div></div>
+ <div class="ad-slot">Advertisement space — reserved for a properly approved advertising partner.<br><small>Ad code has not been connected.</small></div>
+</section>
+</main>
+<footer><p><b>🌍 MACMILLAN ONLINE</b></p><p>Learn • Play • Explore</p><p>© 2026 Macmillan Online. Educational content for learning and revision.</p></footer>
 
 <script>
-
-// WEBSITE NAVIGATION
-
-function showPage(page) {
-    document.querySelectorAll(".section").forEach(function(s) {
-        s.classList.remove("active");
-    });
-
-    document.getElementById(page).classList.add("active");
-    document.getElementById("adArea").style.display = "block";
-
-    window.scrollTo(0, 0);
+let starScore=0;
+function addStar(){starScore++;document.getElementById('starScore').textContent=starScore}
+function resetStar(){starScore=0;document.getElementById('starScore').textContent=starScore}
+let secretNumber=Math.floor(Math.random()*10)+1;
+function guessNumber(){
+ const field=document.getElementById('guessInput');const n=Number(field.value);const out=document.getElementById('guessFeedback');
+ if(!Number.isInteger(n)||n<1||n>10){out.textContent='Enter a whole number from 1 to 10.';return}
+ if(n===secretNumber){out.textContent='Correct! You found the number. Press New number to play again.'}
+ else if(n<secretNumber){out.textContent='Too low. Try again!'}
+ else{out.textContent='Too high. Try again!'}
 }
-
-
-// WEBSITE SEARCH
-
-function searchSite() {
-    let term = document.getElementById("searchInput")
-        .value.trim().toLowerCase();
-
-    if (!term) {
-        alert("Please enter something to search.");
-        return;
-    }
-
-    let sections = document.querySelectorAll(".section");
-    let found = [];
-
-    sections.forEach(function(section) {
-        section.querySelectorAll(".searchable").forEach(function(card) {
-            if (card.textContent.toLowerCase().includes(term)) {
-                found.push({
-                    section: section.id,
-                    card: card
-                });
-            }
-        });
-    });
-
-    if (found.length === 0) {
-        alert("No matching content found.");
-        return;
-    }
-
-    showPage(found[0].section);
-
-    found[0].card.scrollIntoView({behavior:"smooth", block:"center"});
-
-    if (found.length > 1) {
-        alert("Found " + found.length + " matching items.");
-    }
+function newNumber(){secretNumber=Math.floor(Math.random()*10)+1;document.getElementById('guessInput').value='';document.getElementById('guessFeedback').textContent='A new number is ready!'}
+function playRPS(user){
+ const choices=['Rock','Paper','Scissors'];const computer=choices[Math.floor(Math.random()*3)];let result;
+ if(user===computer)result='It is a draw.';
+ else if((user==='Rock'&&computer==='Scissors')||(user==='Paper'&&computer==='Rock')||(user==='Scissors'&&computer==='Paper'))result='You win!';
+ else result='Computer wins this round.';
+ document.getElementById('rpsResult').textContent='You: '+user+' | Computer: '+computer+'. '+result;
 }
-
-
-// EDUCATION QUIZZES
-
-function answerQuiz(answer) {
-    document.getElementById("quizResult").textContent =
-        answer === "heart" ? "Correct! Well done!" : "Try again!";
-}
-
-function mathQuiz(answer) {
-    document.getElementById("mathResult").textContent =
-        answer === 56 ? "Correct! 8 × 7 = 56." : "Not quite. Try again!";
-}
-
-function planetQuiz(answer) {
-    document.getElementById("planetResult").textContent =
-        answer === "Mars" ? "Correct! Mars is the Red Planet." : "Try again!";
-}
-
-
-// STAR GAME
-
-let stars = 0;
-
-function starGame() {
-    stars++;
-    document.getElementById("starScore").textContent = stars;
-}
-
-function resetStar() {
-    stars = 0;
-    document.getElementById("starScore").textContent = 0;
-}
-
-
-// NUMBER GUESSING GAME
-
-let secretNumber = Math.floor(Math.random() * 10) + 1;
-
-function guessGame() {
-    let guess = Number(document.getElementById("guessInput").value);
-    let result = document.getElementById("guessResult");
-
-    if (!Number.isInteger(guess) || guess < 1 || guess > 10) {
-        result.textContent = "Enter a whole number from 1 to 10.";
-        return;
-    }
-
-    if (guess === secretNumber) {
-        result.textContent = "Correct! You won! A new number is ready.";
-        secretNumber = Math.floor(Math.random() * 10) + 1;
-    } else if (guess < secretNumber) {
-        result.textContent = "Too low! Try again.";
-    } else {
-        result.textContent = "Too high! Try again.";
-    }
-}
-
-
-// ROCK PAPER SCISSORS
-
-function playRPS(player) {
-    let options = ["Rock", "Paper", "Scissors"];
-    let computer = options[Math.floor(Math.random() * 3)];
-    let result = "";
-
-    if (player === computer) {
-        result = "It's a draw!";
-    } else if (
-        (player === "Rock" && computer === "Scissors") ||
-        (player === "Paper" && computer === "Rock") ||
-        (player === "Scissors" && computer === "Paper")
-    ) {
-        result = "You win!";
-    } else {
-        result = "Computer wins!";
-    }
-
-    document.getElementById("rpsResult").textContent =
-        "You: " + player + " | Computer: " + computer + " | " + result;
-}
-
-
-// ENTERTAINMENT FACTS
-
-let facts = [
-    "Jupiter is the largest planet in our Solar System.",
-    "Octopuses have three hearts.",
-    "The Moon is Earth's natural satellite.",
-    "The Sun is a star.",
-    "A group of lions is called a pride."
+const quizData=[
+ {id:'bio',correct:'Heart',options:['Brain','Heart','Lungs']},
+ {id:'math',correct:'56',options:['54','56','64']},
+ {id:'chem',correct:'7',options:['2','7','12']}
 ];
-
-function showFact() {
-    let index = Math.floor(Math.random() * facts.length);
-    document.getElementById("fact").textContent = facts[index];
+quizData.forEach(q=>{
+ const box=document.getElementById(q.id+'Options');
+ q.options.forEach(option=>{
+  const button=document.createElement('button');button.className='quiz-option';button.textContent=option;
+  button.addEventListener('click',()=>{
+   const feedback=document.getElementById(q.id+'Feedback');
+   feedback.textContent=option===q.correct?'Correct! Well done.':'Not quite. Try again.';
+   feedback.style.color=option===q.correct?'#16845b':'#b45309';
+  });
+  box.appendChild(button);
+ });
+});
+function searchSite(){
+ const term=document.getElementById('siteSearch').value.trim().toLowerCase();
+ const cards=[...document.querySelectorAll('.searchable')];let count=0;
+ cards.forEach(card=>{const match=!term||card.innerText.toLowerCase().includes(term);card.classList.toggle('hidden',!match);if(match)count++});
+ document.getElementById('searchMessage').textContent=term?(count+' matching section(s) found. Scroll down to view them.'):'Showing all learning content.';
+ if(term)document.getElementById('education').scrollIntoView({behavior:'smooth'});
 }
-
-
-// DEMO USER PROFILE
-// Stores only a display name in this browser.
-// It is NOT a secure online registration system.
-
-function registerUser() {
-    let name = document.getElementById("username").value.trim();
-
-    if (name.length < 2) {
-        document.getElementById("accountMessage").textContent =
-            "Please enter at least 2 characters.";
-        return;
-    }
-
-    localStorage.setItem("macmillanDemoName", name);
-    updateWelcome();
-
-    document.getElementById("accountMessage").textContent =
-        "Welcome, " + name + "! Your demo profile is ready.";
+document.getElementById('siteSearch').addEventListener('keydown',e=>{if(e.key==='Enter')searchSite()});
+function saveProfile(){
+ const name=document.getElementById('displayName').value.trim();
+ const msg=document.getElementById('profileMessage');
+ if(!name){msg.textContent='Please enter a display name.';return}
+ try{localStorage.setItem('macmillanDisplayName',name);msg.textContent='Welcome, '+name+'! Your profile is saved on this device.'}
+ catch(e){msg.textContent='This browser could not save the profile.'}
 }
-
-function logoutUser() {
-    localStorage.removeItem("macmillanDemoName");
-    document.getElementById("username").value = "";
-    document.getElementById("accountMessage").textContent =
-        "You have logged out.";
-    updateWelcome();
+function clearProfile(){
+ try{localStorage.removeItem('macmillanDisplayName')}catch(e){}
+ document.getElementById('displayName').value='';
+ document.getElementById('profileMessage').textContent='Local profile cleared.';
 }
-
-function updateWelcome() {
-    let name = localStorage.getItem("macmillanDemoName");
-
-    document.getElementById("welcome").textContent =
-        name ? "Welcome back, " + name + "!" :
-        "Your world of knowledge and entertainment.";
-}
-
-updateWelcome();
-
+try{
+ const saved=localStorage.getItem('macmillanDisplayName');
+ if(saved){document.getElementById('displayName').value=saved;document.getElementById('profileMessage').textContent='Welcome back, '+saved+'!'}
+}catch(e){}
 </script>
-
 </body>
 </html>
