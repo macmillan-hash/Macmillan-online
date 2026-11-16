@@ -1,0 +1,653 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Macmillan Online</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f7f5;
+    color: #193329;
+}
+
+header {
+    background: #063d2a;
+    color: white;
+    padding: 18px;
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    background: #19a66b;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+header h1 { margin: 0; }
+
+header p { color: #a9eac9; }
+
+nav {
+    background: #092d21;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 12px;
+}
+
+nav button {
+    background: transparent;
+    border: 1px solid #42c98d;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background: #168452;
+}
+
+.hero {
+    background: linear-gradient(120deg,#d0f5df,#e9f9ef);
+    text-align: center;
+    padding: 35px 15px;
+}
+
+.hero h2 {
+    color: #075b39;
+    font-size: 27px;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 15px;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #aab9b0;
+    border-radius: 6px;
+    max-width: 100%;
+}
+
+.search input { width: 65%; }
+
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding: 15px;
+}
+
+.section { display: none; }
+.section.active { display: block; }
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.card h3 { color: #087344; }
+
+.action {
+    background: #087344;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin: 5px 3px;
+    cursor: pointer;
+}
+
+.action:hover { background: #07532f; }
+
+.ad-space {
+    background: #e7ece9;
+    border: 2px dashed #83968a;
+    padding: 25px 10px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px 0;
+    color: #536158;
+}
+
+.ad-space small { display: block; }
+
+.game-score {
+    font-size: 25px;
+    color: #087344;
+    font-weight: bold;
+}
+
+footer {
+    background: #063d2a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+#loginBox {
+    max-width: 420px;
+    margin: auto;
+}
+
+#loginBox input {
+    width: 100%;
+    margin: 7px 0;
+}
+
+#accountMessage { color: #087344; }
+
+.result {
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.hidden { display: none; }
+
+@media(max-width:500px) {
+    nav button { font-size: 12px; padding: 9px; }
+    .hero h2 { font-size: 22px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <div class="logo-icon">M</div>
+        <div>
+            <h1>MACMILLAN ONLINE</h1>
+            <small>LEARN • PLAY • EXPLORE</small>
+        </div>
+    </div>
+    <p id="welcome">Your world of knowledge and entertainment.</p>
+</header>
+
+<nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('education')">Education</button>
+    <button onclick="showPage('gaming')">Gaming</button>
+    <button onclick="showPage('technology')">Technology</button>
+    <button onclick="showPage('entertainment')">Entertainment</button>
+    <button onclick="showPage('account')">My Account</button>
+</nav>
+
+<div class="hero">
+    <h2>Discover Something New!</h2>
+    <p>Learn, play games and explore the world.</p>
+</div>
+
+<div class="search">
+    <input id="searchInput"
+    placeholder="Search Macmillan Online..."
+    onkeydown="if(event.key==='Enter') searchSite()">
+
+    <button class="action" onclick="searchSite()">Search</button>
+</div>
+
+<div class="container">
+
+<!-- HOME -->
+
+<div id="home" class="section active">
+
+    <div class="card">
+        <h2>Welcome to Macmillan Online!</h2>
+        <p>Your online centre for education, gaming, technology and entertainment.</p>
+        <button class="action" onclick="showPage('education')">Start Learning</button>
+        <button class="action" onclick="showPage('gaming')">Play Games</button>
+    </div>
+
+    <div class="card searchable">
+        <h3>📚 Education Centre</h3>
+        <p>Read school notes and test your knowledge.</p>
+        <button class="action" onclick="showPage('education')">Explore Education</button>
+    </div>
+
+    <div class="card searchable">
+        <h3>🎮 Gaming Centre</h3>
+        <p>Enjoy fun games and improve your scores.</p>
+        <button class="action" onclick="showPage('gaming')">Play Now</button>
+    </div>
+
+    <div class="card searchable">
+        <h3>💻 Technology Centre</h3>
+        <p>Learn HTML, CSS, JavaScript and computers.</p>
+        <button class="action" onclick="showPage('technology')">Learn Technology</button>
+    </div>
+
+    <div class="card searchable">
+        <h3>🎬 Entertainment Centre</h3>
+        <p>Explore interesting facts and fun quizzes.</p>
+        <button class="action" onclick="showPage('entertainment')">Explore</button>
+    </div>
+
+</div>
+
+<!-- EDUCATION -->
+
+<div id="education" class="section">
+
+<h2>📚 Education Centre</h2>
+
+<div class="card searchable">
+<h3>Mathematics: Algebra</h3>
+<p>Algebra uses letters and symbols to represent numbers.</p>
+<p>Example: x + 5 = 12</p>
+<p>Subtract 5 from both sides:</p>
+<p><b>x = 7</b></p>
+</div>
+
+<div class="card searchable">
+<h3>Biology: Photosynthesis</h3>
+<p>Photosynthesis is the process by which green plants make food using light energy.</p>
+<p>Requirements:</p>
+<ul>
+<li>Sunlight</li>
+<li>Water</li>
+<li>Carbon dioxide</li>
+<li>Chlorophyll</li>
+</ul>
+<p>Products: Glucose and oxygen.</p>
+</div>
+
+<div class="card searchable">
+<h3>Chemistry: Acids and Bases</h3>
+<p>Acids have a pH below 7.</p>
+<p>Neutral substances have a pH of 7.</p>
+<p>Alkalis have a pH above 7.</p>
+</div>
+
+<div class="card searchable">
+<h3>Physics: Electricity</h3>
+<p>Ohm's law states that voltage equals current multiplied by resistance.</p>
+<p><b>V = I × R</b></p>
+</div>
+
+<div class="card">
+<h3>📝 Biology Quiz</h3>
+<p>Which organ pumps blood around the body?</p>
+
+<button class="action" onclick="answerQuiz('brain')">Brain</button>
+<button class="action" onclick="answerQuiz('heart')">Heart</button>
+<button class="action" onclick="answerQuiz('lungs')">Lungs</button>
+
+<p id="quizResult" class="result"></p>
+</div>
+
+<div class="card">
+<h3>📝 Mathematics Quiz</h3>
+<p>What is 8 × 7?</p>
+
+<button class="action" onclick="mathQuiz(54)">54</button>
+<button class="action" onclick="mathQuiz(56)">56</button>
+<button class="action" onclick="mathQuiz(64)">64</button>
+
+<p id="mathResult" class="result"></p>
+</div>
+
+</div>
+
+<!-- GAMING -->
+
+<div id="gaming" class="section">
+
+<h2>🎮 Gaming Centre</h2>
+
+<div class="card">
+<h3>Game 1: Click the Star</h3>
+<p>Click the star as many times as you can.</p>
+<p class="game-score">Score: <span id="starScore">0</span></p>
+
+<button class="action" style="font-size:35px"
+onclick="starGame()">⭐</button>
+
+<button class="action" onclick="resetStar()">Reset</button>
+</div>
+
+<div class="card">
+<h3>Game 2: Number Guessing</h3>
+<p>Guess a number between 1 and 10.</p>
+
+<input id="guessInput" type="number"
+min="1" max="10" placeholder="Your guess">
+
+<button class="action" onclick="guessGame()">Guess</button>
+
+<p id="guessResult" class="result"></p>
+</div>
+
+<div class="card">
+<h3>Game 3: Rock, Paper, Scissors</h3>
+<p>Choose your move:</p>
+
+<button class="action" onclick="playRPS('Rock')">🪨 Rock</button>
+<button class="action" onclick="playRPS('Paper')">📄 Paper</button>
+<button class="action" onclick="playRPS('Scissors')">✂ Scissors</button>
+
+<p id="rpsResult" class="result"></p>
+</div>
+
+</div>
+
+<!-- TECHNOLOGY -->
+
+<div id="technology" class="section">
+
+<h2>💻 Technology Centre</h2>
+
+<div class="card searchable">
+<h3>What is HTML?</h3>
+<p>HTML is the language used to structure webpages.</p>
+</div>
+
+<div class="card searchable">
+<h3>What is CSS?</h3>
+<p>CSS controls colours, fonts, layouts and website designs.</p>
+</div>
+
+<div class="card searchable">
+<h3>What is JavaScript?</h3>
+<p>JavaScript makes websites interactive.</p>
+</div>
+
+<div class="card searchable">
+<h3>Useful Computer Shortcuts</h3>
+<ul>
+<li>Ctrl + C: Copy</li>
+<li>Ctrl + V: Paste</li>
+<li>Ctrl + S: Save</li>
+<li>Ctrl + Z: Undo</li>
+<li>Alt + Tab: Switch windows</li>
+</ul>
+</div>
+
+</div>
+
+<!-- ENTERTAINMENT -->
+
+<div id="entertainment" class="section">
+
+<h2>🎬 Entertainment Centre</h2>
+
+<div class="card">
+<h3>Interesting Facts</h3>
+<p id="fact">Press the button to discover a fact.</p>
+<button class="action" onclick="showFact()">Show Fact</button>
+</div>
+
+<div class="card">
+<h3>Fun Quiz</h3>
+<p>Which planet is called the Red Planet?</p>
+
+<button class="action" onclick="planetQuiz('Mars')">Mars</button>
+<button class="action" onclick="planetQuiz('Venus')">Venus</button>
+<button class="action" onclick="planetQuiz('Earth')">Earth</button>
+
+<p id="planetResult" class="result"></p>
+</div>
+
+</div>
+
+<!-- USER ACCOUNT -->
+
+<div id="account" class="section">
+
+<h2>👤 My Account</h2>
+
+<div class="card" id="loginBox">
+
+<h3>Demo Registration / Login</h3>
+
+<p>Enter a display name to create or open your local demo profile.</p>
+
+<input id="username" placeholder="Choose a display name">
+
+<button class="action" onclick="registerUser()">Register / Login</button>
+
+<p id="accountMessage"></p>
+
+<button class="action" onclick="logoutUser()">Log Out</button>
+
+<p><small>This is a demonstration profile, not a real online account.</small></p>
+
+</div>
+
+</div>
+
+<!-- ADVERTISEMENT AREA -->
+
+<div class="ad-space" id="adArea">
+<strong>ADVERTISEMENT</strong>
+<p>Advertising space reserved for an approved advertising provider.</p>
+<small>No advertisements are running yet.</small>
+</div>
+
+</div>
+
+<footer>
+<h3>🌍 MACMILLAN ONLINE</h3>
+<p>Learn • Play • Explore</p>
+<p>© 2026 Macmillan Online</p>
+</footer>
+
+<script>
+
+// WEBSITE NAVIGATION
+
+function showPage(page) {
+    document.querySelectorAll(".section").forEach(function(s) {
+        s.classList.remove("active");
+    });
+
+    document.getElementById(page).classList.add("active");
+    document.getElementById("adArea").style.display = "block";
+
+    window.scrollTo(0, 0);
+}
+
+
+// WEBSITE SEARCH
+
+function searchSite() {
+    let term = document.getElementById("searchInput")
+        .value.trim().toLowerCase();
+
+    if (!term) {
+        alert("Please enter something to search.");
+        return;
+    }
+
+    let sections = document.querySelectorAll(".section");
+    let found = [];
+
+    sections.forEach(function(section) {
+        section.querySelectorAll(".searchable").forEach(function(card) {
+            if (card.textContent.toLowerCase().includes(term)) {
+                found.push({
+                    section: section.id,
+                    card: card
+                });
+            }
+        });
+    });
+
+    if (found.length === 0) {
+        alert("No matching content found.");
+        return;
+    }
+
+    showPage(found[0].section);
+
+    found[0].card.scrollIntoView({behavior:"smooth", block:"center"});
+
+    if (found.length > 1) {
+        alert("Found " + found.length + " matching items.");
+    }
+}
+
+
+// EDUCATION QUIZZES
+
+function answerQuiz(answer) {
+    document.getElementById("quizResult").textContent =
+        answer === "heart" ? "Correct! Well done!" : "Try again!";
+}
+
+function mathQuiz(answer) {
+    document.getElementById("mathResult").textContent =
+        answer === 56 ? "Correct! 8 × 7 = 56." : "Not quite. Try again!";
+}
+
+function planetQuiz(answer) {
+    document.getElementById("planetResult").textContent =
+        answer === "Mars" ? "Correct! Mars is the Red Planet." : "Try again!";
+}
+
+
+// STAR GAME
+
+let stars = 0;
+
+function starGame() {
+    stars++;
+    document.getElementById("starScore").textContent = stars;
+}
+
+function resetStar() {
+    stars = 0;
+    document.getElementById("starScore").textContent = 0;
+}
+
+
+// NUMBER GUESSING GAME
+
+let secretNumber = Math.floor(Math.random() * 10) + 1;
+
+function guessGame() {
+    let guess = Number(document.getElementById("guessInput").value);
+    let result = document.getElementById("guessResult");
+
+    if (!Number.isInteger(guess) || guess < 1 || guess > 10) {
+        result.textContent = "Enter a whole number from 1 to 10.";
+        return;
+    }
+
+    if (guess === secretNumber) {
+        result.textContent = "Correct! You won! A new number is ready.";
+        secretNumber = Math.floor(Math.random() * 10) + 1;
+    } else if (guess < secretNumber) {
+        result.textContent = "Too low! Try again.";
+    } else {
+        result.textContent = "Too high! Try again.";
+    }
+}
+
+
+// ROCK PAPER SCISSORS
+
+function playRPS(player) {
+    let options = ["Rock", "Paper", "Scissors"];
+    let computer = options[Math.floor(Math.random() * 3)];
+    let result = "";
+
+    if (player === computer) {
+        result = "It's a draw!";
+    } else if (
+        (player === "Rock" && computer === "Scissors") ||
+        (player === "Paper" && computer === "Rock") ||
+        (player === "Scissors" && computer === "Paper")
+    ) {
+        result = "You win!";
+    } else {
+        result = "Computer wins!";
+    }
+
+    document.getElementById("rpsResult").textContent =
+        "You: " + player + " | Computer: " + computer + " | " + result;
+}
+
+
+// ENTERTAINMENT FACTS
+
+let facts = [
+    "Jupiter is the largest planet in our Solar System.",
+    "Octopuses have three hearts.",
+    "The Moon is Earth's natural satellite.",
+    "The Sun is a star.",
+    "A group of lions is called a pride."
+];
+
+function showFact() {
+    let index = Math.floor(Math.random() * facts.length);
+    document.getElementById("fact").textContent = facts[index];
+}
+
+
+// DEMO USER PROFILE
+// Stores only a display name in this browser.
+// It is NOT a secure online registration system.
+
+function registerUser() {
+    let name = document.getElementById("username").value.trim();
+
+    if (name.length < 2) {
+        document.getElementById("accountMessage").textContent =
+            "Please enter at least 2 characters.";
+        return;
+    }
+
+    localStorage.setItem("macmillanDemoName", name);
+    updateWelcome();
+
+    document.getElementById("accountMessage").textContent =
+        "Welcome, " + name + "! Your demo profile is ready.";
+}
+
+function logoutUser() {
+    localStorage.removeItem("macmillanDemoName");
+    document.getElementById("username").value = "";
+    document.getElementById("accountMessage").textContent =
+        "You have logged out.";
+    updateWelcome();
+}
+
+function updateWelcome() {
+    let name = localStorage.getItem("macmillanDemoName");
+
+    document.getElementById("welcome").textContent =
+        name ? "Welcome back, " + name + "!" :
+        "Your world of knowledge and entertainment.";
+}
+
+updateWelcome();
+
+</script>
+
+</body>
+</html>
